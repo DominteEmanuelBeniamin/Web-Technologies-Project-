@@ -7,7 +7,6 @@
 </head>
 <body>
     
-
 <div class="navbar">
   <div class="logo">
     <img src="../logo.jpg" alt="Logo">
@@ -20,10 +19,36 @@
   </div>
 </div>
 
+<!-- Moved the title outside of mainRec and adjusted its class for styling -->
 <div class="mainRec">
     <h1>Add a product for feedback</h1>
-  </div>
+</div>
 
+<!-- Adjusted form section -->
+<div class="formSection">
+    <form id="addProductForm" enctype="multipart/form-data">
+        <!-- File upload for adding an image -->
+        <label for="productImage">Product Image:</label>
+        <input type="file" id="productImage" name="productImage" accept="image/*"><br><br>
+        
+        <!-- Dropdown for adding a question -->
+        <label for="questionType">Question Type:</label>
+        <select id="questionType" name="questionType">
+            <option value="quality">Quality</option>
+            <option value="design">Design</option>
+            <option value="usability">Usability</option>
+            <option value="other">Other</option>
+        </select>
+        <button type="button" onclick="addQuestion()">Add Question</button><br><br>
+    </form>
+</div>
+
+<script>
+function addQuestion() {
+    // Function to handle the addition of questions
+    alert('Add question functionality to be implemented.');
+}
+</script>
 
 </body>
 </html>

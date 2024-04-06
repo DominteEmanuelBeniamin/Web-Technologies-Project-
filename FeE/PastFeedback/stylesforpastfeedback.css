@@ -59,17 +59,4 @@
     top: 20%; 
 }
 
-.titleSection {
-  margin: 500px auto;
-  text-align: center;
-  color: #CEC5B6; /* Adjust the color as needed */
-}
 
-.formSection {
-  background-color: #CEC5B6;
-  width: 60%;
-  max-width: 700px;
-  margin: 90px auto; /* Centering the form */
-  padding: 20px;
-  border-radius: 8px; /* Optional: adds rounded corners */
-}
