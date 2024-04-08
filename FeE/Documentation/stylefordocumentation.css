@@ -1,0 +1,38 @@
+
+.navbar {
+    overflow: hidden;
+    background-color: #73005C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+
+  .logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+  body {
+    background-color: #ffffff; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+
+  .nav-links a {
+    color: #CEC5B6;
+    text-align: center;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 14px; 
+  }
+  
+
+  .nav-links a:hover {
+    background-color: #151436;
+    color: #CEC5B6;
+  }
+
