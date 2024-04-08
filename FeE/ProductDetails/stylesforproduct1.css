@@ -1,11 +1,11 @@
-/* Reset margins and paddings */
+
 body, h1, h2, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Set the background color of the body and ensure full height */
+
 body {
     background-color: #151436;
     display: flex;
@@ -16,7 +16,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Style the navbar */
+
 .navbar {
     background-color: #73005C;
     width: 100%;
@@ -26,7 +26,6 @@ body {
     padding: 10px;
 }
 
-/* Center the logo and navigation links */
 .logo, .nav-links {
     display: flex;
     justify-content: center;
@@ -53,7 +52,6 @@ body {
     color: #CEC5B6;
 }
 
-/* Center the main content and text */
 .mainRec, .product-info, .star-rating, .submit-btn {
     display: flex;
     flex-direction: column;
@@ -72,40 +70,37 @@ body {
     border-radius: 10px;
 }
 
-/* Ensure the product image and details are centered */
 .product-info img {
-    max-width: 100px; /* Adjust this value as necessary */
+    max-width: 100px; 
     height: auto;
     margin-bottom: 10px;
 }
 
-/* Star rating aligned center */
+
 .star-rating {
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Center the stars horizontally */
-    direction: rtl; /* Right-to-left to allow star selection in a more intuitive way */
+    justify-content: center; 
+    direction: rtl; 
 }
 
 .star-rating input[type="radio"] {
-    display: none; /* Hide radio buttons */
+    display: none; 
 }
 
 .star-rating label {
-    font-size: 24px; /* Star size */
-    color: #ccc; /* Color of unselected stars */
+    font-size: 24px;
+    color: #ccc; 
     cursor: pointer;
-    margin: 0 5px; /* Spacing between stars */
+    margin: 0 5px;
 }
 
 .star-rating label:hover,
 .star-rating label:hover ~ label,
 .star-rating input[type="radio"]:checked ~ label {
-    color: #f5a623; /* Color of selected/hovered stars */
+    color: #f5a623; 
 }
 
-
-/* Submit button styling */
 .submit-btn {
     background-color: #73005C;
     color: white;

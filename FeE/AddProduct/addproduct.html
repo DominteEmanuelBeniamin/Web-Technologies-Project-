@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Product</title> 
 <link rel="stylesheet" type="text/css" href="stylesforaddproduct.css">
 </head>
 <body>
@@ -19,19 +20,15 @@
   </div>
 </div>
 
-<!-- Moved the title outside of mainRec and adjusted its class for styling -->
 <div class="mainRec">
     <h1>Add a product for feedback</h1>
 </div>
 
-<!-- Adjusted form section -->
 <div class="formSection">
     <form id="addProductForm" enctype="multipart/form-data">
-        <!-- File upload for adding an image -->
         <label for="productImage">Product Image:</label>
         <input type="file" id="productImage" name="productImage" accept="image/*"><br><br>
         
-        <!-- Dropdown for adding a question -->
         <label for="questionType">Question Type:</label>
         <select id="questionType" name="questionType">
             <option value="quality">Quality</option>
@@ -45,7 +42,6 @@
 
 <script>
 function addQuestion() {
-    // Function to handle the addition of questions
     alert('Add question functionality to be implemented.');
 }
 </script>
