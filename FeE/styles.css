@@ -41,9 +41,9 @@ body {
   margin: 15vh auto 0 auto;
   padding: 20px;
   position: relative;
-  display: flex; /* adăugat */
-  flex-direction: column; /* adăugat */
-  justify-content: center; /* adăugat */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
 }
 
 .mainRec h1,
