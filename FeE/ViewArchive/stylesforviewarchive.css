@@ -38,6 +38,7 @@ body {
 
 .mainRec {
   background-color: #CEC5B6;
+  margin: auto;
   width: 50%;
   max-width: 700px;
   min-height: 150px;

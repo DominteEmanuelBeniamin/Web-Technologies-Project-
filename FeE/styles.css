@@ -38,34 +38,16 @@ body {
   width: 80%;
   max-width: 1000px;
   height: 180px;
-  margin: 15vh auto 0 auto;
+  margin: 0 auto; 
+  margin-top: 15vh;
   padding: 20px;
   position: relative;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-}
-
-.mainRec h1,
-.mainRec h2,
-.mainRec p {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #73005C;
-}
-
-.mainRec h1 {
-  font-size: 36px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.mainRec h2 {
-  font-size: 32px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.mainRec p {
-  font-size: 14px;
-}
+ }
 
 @media screen and (max-width: 768px) {
   .mainRec {
@@ -73,17 +55,45 @@ body {
     padding: 5%;
     height: auto;
   }
+
+  .mainRec h1 {
+    font-size: 48px;
+
+  }
+
+  .mainRec h2 {
+    font-size: 42px;
+
+  }
+
+  .mainRec p {
+    font-size: 24px;
+
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .mainRec {
+    width: 90%;
+    padding: 5%;
+
+    height: auto;
+  }
   
   .mainRec h1 {
     font-size: 48px;
+
   }
   
   .mainRec h2 {
     font-size: 42px;
+
   }
   
   .mainRec p {
     font-size: 24px;
+
   }
 }
 

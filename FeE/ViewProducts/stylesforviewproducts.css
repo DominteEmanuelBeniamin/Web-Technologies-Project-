@@ -36,6 +36,7 @@ body {
 .mainRec {
   background-color: #CEC5B6;
   width: 50%;
+  margin: auto;
   max-width: 700px;
   min-height: 150px;
   padding: 10px;

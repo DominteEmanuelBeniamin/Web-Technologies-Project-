@@ -64,6 +64,7 @@ body {
     background-color: #CEC5B6;
     width: 50%;
     max-width: 700px;
+    margin: auto;
     min-height: 150px;
     padding: 10px;
     position: relative;
