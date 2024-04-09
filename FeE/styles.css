@@ -1,71 +1,94 @@
-
 .navbar {
-    overflow: hidden;
-    background-color: #73005C;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
+  overflow: hidden;
+  background-color: #73005C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
-  .logo img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-left: 20px;
-  }
-  body {
-    background-color: #151436; 
-    margin: 0; 
-    padding: 0; 
-  }
-  
+.logo img {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  margin-left: 2vw;
+}
 
-  .nav-links a {
-    color: #CEC5B6;
-    text-align: center;
-    padding: 8px 12px;
-    text-decoration: none;
-    font-size: 14px; 
-  }
-  
+body {
+  background-color: #151436;
+  margin: 0;
+  padding: 0;
+}
 
-  .nav-links a:hover {
-    background-color: #151436;
-    color: #CEC5B6;
-  }
+.nav-links a {
+  color: #CEC5B6;
+  text-align: center;
+  padding: 1vw 1.5vw;
+  text-decoration: none;
+  font-size: 1.4vw;
+}
 
-  .mainRec {
-    background-color: #CEC5B6;
-    width: 80%;
-    max-width: 1000px; 
-    height: 300px;
-    margin: 150px auto 0 auto; 
-    padding: 20px;
-    position: relative;
+.nav-links a:hover {
+  background-color: #151436;
+  color: #CEC5B6;
+}
+
+.mainRec {
+  background-color: #CEC5B6;
+  width: 80%;
+  max-width: 1000px;
+  height: 180px;
+  margin: 15vh auto 0 auto;
+  padding: 20px;
+  position: relative;
+  display: flex; /* adăugat */
+  flex-direction: column; /* adăugat */
+  justify-content: center; /* adăugat */
 }
 
 .mainRec h1,
 .mainRec h2,
 .mainRec p {
-    text-align: left; 
-    position: absolute; 
-    left: 2%; 
-    color: #73005C;
+  text-align: left;
+  color: #73005C;
 }
 
 .mainRec h1 {
-    font-size: 3vw; 
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serifserif; 
-    top: 20%; 
+  font-size: 36px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .mainRec h2 {
-    font-size: 2.7vw;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-seriferif;
+  font-size: 32px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .mainRec p {
-    font-size: 1.2vw;
-    top: 55%; 
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .mainRec {
+    width: 90%;
+    padding: 5%;
+    height: auto;
+  }
+  
+  .mainRec h1 {
+    font-size: 48px;
+  }
+  
+  .mainRec h2 {
+    font-size: 42px;
+  }
+  
+  .mainRec p {
+    font-size: 24px;
+  }
+}
+
+
+.mainRec p {
+  font-size: 1.2vw;
+  top: 55%;
 }

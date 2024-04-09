@@ -62,13 +62,26 @@ body {
 
 .mainRec {
     background-color: #CEC5B6;
-    width: 80%;
+    width: 50%;
     max-width: 700px;
-    margin: 20px 0;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
-}
+    min-height: 150px;
+    padding: 10px;
+    position: relative;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    display: flex; /* Add this */
+    align-items: center; /* Add this */
+  }
+  
+  .mainRec h1 {
+    text-align: left;
+    color: #73005C;
+    font-size: 24px; /* Adjusted to a specific size */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-right: 10px; /* Adjusted for better spacing */
+  }
+  
 
 .product-info img {
     max-width: 100px; 

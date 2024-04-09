@@ -41,25 +41,23 @@ body {
   width: 50%;
   max-width: 700px;
   min-height: 150px;
-  margin: 20px auto 0 auto;
   padding: 10px;
   position: relative;
-  align-items: center;
-  overflow-wrap: break-word; 
-  word-wrap: break-word; 
-  white-space: normal; }
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  display: flex; /* Add this */
+  align-items: center; /* Add this */
+}
 
 .mainRec h1 {
   text-align: left;
-  position: absolute;
-  left: 2%;
   color: #73005C;
-  font-size: 3vw;
+  font-size: 24px; /* Adjusted to a specific size */
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  top: 20%;
-  right: 2%; 
-  overflow-wrap: break-word; 
+  margin-right: 10px; /* Adjusted for better spacing */
 }
+
 
 .product-list {
 display: flex;
