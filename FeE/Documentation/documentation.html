@@ -29,20 +29,34 @@
     </ol>
 
     <h1 id="introduction">1. Introduction</h1>
-<h2>1.1 Purpose</h2>
-<p>The purpose of this project is to develop a web-based tool that enables users to provide feedback for various entities (such as events, people, geographic locations, products, services, artistic artifacts, etc.) in an anonymous manner. Feedback, in this context, is understood as expressing a specific emotion according to the Plutchik model. The application, through a REST/GraphQL API, should manage the entities to be evaluated and the specific responses for each (editable by the initiator of a feedback collection request). After the completion of the period during which a form is accessible to individuals for reviewing a particular entity, statistics of interest regarding each category of evaluated entities according to each recorded emotion will be presented. Multiple criteria will be considered, such as user group, evaluation time period, subcategories of entities, positive/negative characteristics based on the shared emotion, etc. The generated reports will be available in HTML, CSV, and JSON formats. Additionally, implementing attractive data visualization methods as described in the provided bonus resource will be pursued.</p>
+    
+    <h2>1.1 Objectives</h2>
+    <p>The primary objective of this project is to develop a user-friendly web-based platform that facilitates feedback across diverse domains, including events, individuals, locations, products, services, and artworks. Feedback submissions will be anonymized and categorized based on various emotions using the Plutchik model, which offers a comprehensive framework for understanding and organizing human emotions.</p>
+    <p>Utilizing HTML, CSS, PHP, and other pertinent technologies, we aim to create an intuitive and aesthetically pleasing interface for users to engage with the platform seamlessly. The integration of these technologies will ensure efficient data presentation and management, enhancing the overall user experience.</p>
+    <p>Powered by a REST/GraphQL API, the platform will manage the collection and organization of feedback from users. Post-collection, comprehensive reports will be generated, leveraging insights derived from the Plutchik model. These reports will provide statistical analyses, considering factors such as user demographics, timing of feedback submission, and sentiment analysis based on expressed emotions.</p>
+    <p>The generated reports will be available in multiple formats, including HTML, CSV, and JSON, catering to diverse user preferences. Additionally, efforts will be made to present the data in visually engaging formats, optimizing user comprehension and engagement.</p>
+    <p>By incorporating the principles of the Plutchik model and utilizing HTML, CSS, PHP, and related technologies, this project aims to deliver a robust feedback platform that not only facilitates meaningful interactions but also ensures accessibility and usability for all users.</p>
 
-<h2>1.2 Product Scope</h2>
-<p>The product scope includes the following features and functionalities:</p>
-<ul>
-    <li><strong>Feedback Collection:</strong> Users can submit feedback for various entities anonymously. They will have the option to specify their emotions according to the Plutchik model.</li>
-    <li><strong>Entity Management:</strong> The application should allow administrators to manage the entities that are open for feedback. This includes adding, editing, and removing entities from the system.</li>
-    <li><strong>Feedback Response Management:</strong> Initiators of feedback collection requests should have the ability to manage the responses received for each entity. They can view, edit, and analyze the feedback data.</li>
-    <li><strong>Statistics Generation:</strong> After the feedback collection period for an entity concludes, the system will generate statistics regarding the emotions expressed for that entity. These statistics will be categorized based on various criteria such as user demographics, time periods, and subcategories of entities.</li>
-    <li><strong>Report Generation:</strong> Reports summarizing the feedback statistics will be generated in HTML, CSV.</li>
-</ul>
-<h2>1.3 Refrences</h2>
+    <h2>1.2 Product Scope</h2>
+    <p>Our product encompasses a comprehensive suite of features and functionalities tailored to facilitate seamless feedback management and analysis. Key components of our product include:</p>
+    <ul>
+        <li><strong>Feedback Collection:</strong> Users can effortlessly provide feedback for a diverse range of entities, ensuring anonymity and ease of expression. Leveraging the Plutchik model, users can articulate their emotions effectively, enriching the feedback process.</li>
+        <li><strong>Entity Management:</strong> Administrators are equipped with robust tools to efficiently manage entities available for feedback. This entails seamless additions, modifications, and removals from the system, ensuring flexibility and relevance.</li>
+        <li><strong>Feedback Response Management:</strong> Initiators of feedback collection exercise full control over received responses for each entity. This includes the ability to review, edit, and analyze feedback data, empowering stakeholders to derive actionable insights.</li>
+        <li><strong>Statistics Generation:</strong> At the culmination of the feedback collection period, our system generates comprehensive statistics delineating expressed emotions for each entity. These statistics are intelligently categorized based on various criteria such as user demographics, evaluation timeframes, and entity subcategories, furnishing stakeholders with invaluable insights.</li>
+        <li><strong>Report Generation:</strong> Automated generation of comprehensive reports summarizing feedback statistics in user-friendly formats such as HTML and CSV. These reports facilitate easy interpretation and dissemination of actionable insights, fostering informed decision-making.</li>
+    </ul>
+    <p>By encapsulating these core functionalities, our product aims to streamline the feedback management process, enhance stakeholder engagement, and empower informed decision-making across diverse domains.</p>
 
+    <h2>1.3 References</h2>
+    <ul>
+        <li><a href="https://www.6seconds.org/2022/03/13/plutchik-wheel-emotions/">Plutchik Wheel of Emotions</a>: This resource provides an in-depth exploration of the Plutchik model, offering insights into the intricate interplay of human emotions and how they can be effectively categorized for feedback analysis.</li>
+        <li> <a href="https://profs.info.uaic.ro/andrei.panu/courses/web/lab/">HTML and CSS Course Page</a>:  This is the official page of the HTML and CSS course offered by Professor Andrei Panu. We extend our thanks to Professor Panu for compiling and sharing an extensive array of resources and documentation crucial for understanding and implementing web design and development principles. These resources are invaluable for both novice and experienced developers aiming to enhance their skills in creating aesthetically pleasing and functionally robust web-based platforms.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">Mozilla CSS Documentation</a>: This authoritative resource offers detailed insights into Cascading Style Sheets (CSS), providing guidelines and best practices for styling web elements, thereby enhancing the overall presentation and usability of our platform.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Mozilla HTML Documentation</a>: The Mozilla HTML documentation offers a wealth of information on Hypertext Markup Language (HTML), guiding developers in the creation of structured and semantically meaningful web content, fundamental to the functionality and accessibility of our platform.</li>
+        <li><a href="https://www.bing.com/ck/a?!&&p=cb37c4793c7c56daJmltdHM9MTcxMjcwNzIwMCZpZ3VpZD0zMGQ0ODNkMy1kNWQzLTY5NzAtM2E1Ny05NzkwZDRjZTY4YWUmaW5zaWQ9NTE5OA&ptn=3&ver=2&hsh=3&fclid=30d483d3-d5d3-6970-3a57-9790d4ce68ae&psq=php+manual&u=a1aHR0cHM6Ly93d3cucGhwLm5ldC9tYW51YWwvZW4vaW5kZXgucGhw&ntb=1">PHP Documentation</a>: This resource serves as a comprehensive guide for utilizing PHP, a crucial component in the development of our web-based platform. It offers insights into PHP syntax, functions, and best practices, facilitating robust backend functionality and data management.</li>
+    </ul>
+    <p>These references form the cornerstone of our development process, providing invaluable insights and guidance in implementing key features and functionalities within our web-based feedback platform.</p>
     <h1 id="overall-description">2. Overall Description</h1>
     <h2>2.1 Product Perspective</h2>
 <p>The product perspective provides a comprehensive view of how the feedback application integrates within the broader landscape of systems and services. It elucidates the interconnectedness and interdependencies between the feedback application and other components within the ecosystem.</p>
@@ -66,6 +80,68 @@
 
     <h1 id="external-interface-requirements">3. External Interface Requirements</h1>
     <h2>3.1 User Interfaces</h2>
+    <p>The user interface (UI) for the system is crafted to provide an optimal user experience through intuitive layout and efficient navigation. The design emphasizes clarity and simplicity, enabling users to interact with the system effortlessly.</p>
+    
+    <h3>Sign In/Sign Out Features</h3>
+    <p>The Sign In and Sign Out functionalities are critical for maintaining user session security and providing appropriate access permissions across the system. Users are required to sign in to access personalized features and administrative functions such as adding products.</p>
+    <ul>
+      <li><strong>Sign In:</strong> 
+          <p>Users are prompted to sign in through a secure, streamlined login page that offers options for password-based or social media logins. Successful authentication grants access to the full spectrum of system features, based on user roles.</p>
+      </li>
+      <li><strong>Sign Out:</strong>
+          <p>When users sign out, the system immediately terminates the session and clears any temporary data, ensuring user information remains confidential and preventing unauthorized access.</p>
+      </li>
+    </ul>
+    
+    <h3>Home Page</h3>
+    <p>The Home Page is the gateway to the system, providing direct links to all main features including product views, archival access, and new product additions. It serves as the central hub for navigation.</p>
+    <ul>
+      <li><strong>Navigation Bar:</strong>
+          <p>Features straightforward links to Home, View Products, Add Product, View Archive, and Documentation, facilitating quick access from any part of the system.</p>
+      </li>
+      <li><strong>Main Section:</strong>
+          <p>Highlights current promotions or important updates through a prominent display, ensuring users are immediately informed of key happenings and offers.</p>
+      </li>
+    </ul>
+    
+    <h3>View Products Page</h3>
+    <p>This page allows users to explore and review a comprehensive list of products, detailed with high-quality images and essential information, enhancing the shopping experience.</p>
+    <ul>
+      <li><strong>Product List:</strong>
+          <p>Each product is displayed with an image, name, and brief description in a clean, organized layout, which facilitates easy browsing and selection.</p>
+      </li>
+    </ul>
+    
+    <h3>Add Product Page (Requires Sign In)</h3>
+    <p>Accessible only to authenticated users, this page allows the addition of new products. It is specifically designed to capture all necessary information through a methodical form, ensuring that all listings are comprehensive and useful.</p>
+    <ul>
+      <li><strong>Product Submission Form:</strong>
+          <p>Incorporates fields for uploading product images, and detailed descriptions, and allows sellers to set categories and prices, which helps maintain a uniform product appearance on the platform.</p>
+      </li>
+      <li><strong>Feedback Mechanism:</strong>
+          <p>Sellers can add customizable questions to gather targeted feedback from customers, enhancing product quality based on user responses.</p>
+      </li>
+    </ul>
+    
+    <h3>View Archive Page</h3>
+    <p>The View Archive page is dedicated to providing access to products that are no longer available for purchase but can still be referenced for information or feedback.</p>
+    <ul>
+      <li><strong>Archived Products Display:</strong>
+          <p>Archived items are listed in a manner similar to active products but are clearly marked to distinguish them from currently available items.</p>
+      </li>
+    </ul>
+    
+    <h3>Documentation Page</h3>
+    <p>This page is a repository of resources about the platform, offering detailed guides and FAQs to help users understand and efficiently use the system.</p>
+    <ul>
+      <li><strong>Searchable Content:</strong>
+          <p>Includes a search feature enabling users to directly find specific topics or instructions based on keywords, which enhances the utility of the documentation.</p>
+      </li>
+    </ul>
+    
+    <h3>Responsive Design</h3>
+    <p>The UI adjusts effectively across different devices and resolutions, ensuring a consistent and professional user experience whether accessed via desktop, tablet, or smartphone. This responsive design approach guarantees that all features are usable and visually appealing on any device.</p>
+    
 
 
     <h1 id="system-features">4. System Features</h1>
