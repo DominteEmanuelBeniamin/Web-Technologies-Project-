@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,17 +20,37 @@
         </div>
       </div>
 
-    <h1>Table of Contents</h1>
-    <ol>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#overall-description">Overall Description</a></li>
-        <li><a href="#external-interface-requirements">External Interface Requirements</a></li>
-        <li><a href="#system-features">System Features</a></li>
-    </ol>
+    <article>
+        <h1>Software Requirements Specification - Feedback on Everything</h1>
+        <div>
+          <section typeof="sa:AuthorsList">
+            <h2>Authors</h2>
+            <ul>
+              <li typeof="sa:ContributorRole" property="schema:author">
+                Dominte Emanuel
+              </li>
+              <li typeof="sa:ContributorRole" property="schema:author">
+                Plamada Fineas
+              </li>
+            </ul>
+          </section>
+        </div>
+      </article>
 
-    <h1 id="introduction">1. Introduction</h1>
+    <section>
+        <h1>Table of Contents</h1>
+        <ol>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#overall-description">Overall Description</a></li>
+          <li><a href="#external-interface-requirements">External Interface Requirements</a></li>
+          <li><a href="#system-features">System Features</a></li>
+        </ol>
+      </section>
     
-    <h2>1.1 Objectives</h2>
+    <section>
+      <h1 id="introduction">1. Introduction</h1>
+      <section>
+        <h2>1.1 Objectives</h2>
     <p>The primary objective of this project is to develop a user-friendly web-based platform that facilitates feedback across diverse domains, including events, individuals, locations, products, services, and artworks. Feedback submissions will be anonymized and categorized based on various emotions using the Plutchik model, which offers a comprehensive framework for understanding and organizing human emotions.</p>
     <p>Utilizing HTML, CSS, PHP, and other pertinent technologies, we aim to create an intuitive and aesthetically pleasing interface for users to engage with the platform seamlessly. The integration of these technologies will ensure efficient data presentation and management, enhancing the overall user experience.</p>
     <p>Powered by a REST/GraphQL API, the platform will manage the collection and organization of feedback from users. Post-collection, comprehensive reports will be generated, leveraging insights derived from the Plutchik model. These reports will provide statistical analyses, considering factors such as user demographics, timing of feedback submission, and sentiment analysis based on expressed emotions.</p>
@@ -57,8 +77,13 @@
         <li><a href="https://www.bing.com/ck/a?!&&p=cb37c4793c7c56daJmltdHM9MTcxMjcwNzIwMCZpZ3VpZD0zMGQ0ODNkMy1kNWQzLTY5NzAtM2E1Ny05NzkwZDRjZTY4YWUmaW5zaWQ9NTE5OA&ptn=3&ver=2&hsh=3&fclid=30d483d3-d5d3-6970-3a57-9790d4ce68ae&psq=php+manual&u=a1aHR0cHM6Ly93d3cucGhwLm5ldC9tYW51YWwvZW4vaW5kZXgucGhw&ntb=1">PHP Documentation</a>: This resource serves as a comprehensive guide for utilizing PHP, a crucial component in the development of our web-based platform. It offers insights into PHP syntax, functions, and best practices, facilitating robust backend functionality and data management.</li>
     </ul>
     <p>These references form the cornerstone of our development process, providing invaluable insights and guidance in implementing key features and functionalities within our web-based feedback platform.</p>
-    <h1 id="overall-description">2. Overall Description</h1>
-    <h2>2.1 Product Perspective</h2>
+      </section>
+    </section>
+    
+    <section>
+      <h1 id="overall-description">2. Overall Description</h1>
+      <section>
+        <h2>2.1 Product Perspective</h2>
 <p>The product perspective provides a comprehensive view of how the feedback application integrates within the broader landscape of systems and services. It elucidates the interconnectedness and interdependencies between the feedback application and other components within the ecosystem.</p>
 <p>Specifically, it outlines:</p>
 <ul>
@@ -95,11 +120,14 @@
       <h3>2.4.3 Aditional software components</h3>
       <p><a href="https://en.wikipedia.org/wiki/XAMPP"><strong>XAMPP</strong></a> is used as web server for this project providing <b>Apache</b>,<b>MySQL</b> and <b>PHP</b> packages.</p>
 
-    <h2>2.5 Design and Implementation Constraints</h2>
-
-
-    <h1 id="external-interface-requirements">3. External Interface Requirements</h1>
-    <h2>3.1 User Interfaces</h2>
+    
+      </section>
+    </section>
+    
+    <section>
+      <h1 id="external-interface-requirements">3. External Interface Requirements</h1>
+      <section>
+        <h2>3.1 User Interfaces</h2>
     <p>The user interface (UI) for the system is crafted to provide an optimal user experience through intuitive layout and efficient navigation. The design emphasizes clarity and simplicity, enabling users to interact with the system effortlessly.</p>
     
     <h3>Sign In/Sign Out Features</h3>
@@ -161,99 +189,141 @@
     
     <h3>Responsive Design</h3>
     <p>The UI adjusts effectively across different devices and resolutions, ensuring a consistent and professional user experience whether accessed via desktop, tablet, or smartphone. This responsive design approach guarantees that all features are usable and visually appealing on any device.</p>
-    
+      </section>
+    </section>
 
+    <section>
+      <h1 id="system-features">4. System Features</h1>
+      <section>
+        <h2>4.1 Sign IN</h2>
+        <section>
+          <h3>4.1.1 Description and Priority</h3>
+          <p>A user is identified via a <i>username</i> and a <i>password</i> and enables private features as: 
+            <b>Add Product</b> and <b>View Archive</b>.
+          </p>
+        </section>
+        <section>
+          <h3>4.1.2 Stimulus/Response Sequences</h3>
+          <p>
+            <i>Home</i> page navbar: click on "Login" >> <i>Login</i> page: click on "Sign In" >> 
+            enter <i>username</i> and <i>password</i> >> click on "Sign In"
+          </p>
+        </section>
+        <section>
+          <h3>4.1.3 Functional Requirements</h3>
+          <section>
+            <h4>4.1.3.1 Software capabilities</h4>
+            <p>none</p>
+          </section>
+          <section>
+             <h4>4.1.3.2 Error conditioning</h4>
+            <p>TBD</p>
+          </section>
+        </section>
+      </section>
+      <section>
+        <h2>4.2 Sign UP</h2>
+        <section>
+          <h3>4.2.1 Description and Priority</h3>
+          <p>A user can create an account providing an <i>email</i> and choosing an <i>username</i> and a <i>password</i>.</p>
+        </section>
+        <section>
+          <h3>4.2.2 Stimulus/Response Sequences</h3>
+          <p>
+            <i>Home</i> page navbar: click on "Login" >> <i>Login</i> page: click on "Sign Up" >> 
+            enter <i>email</i>,<i>username</i>,<i>password</i> >> click on "Create account"
+          </p>
+        </section>
+        <section>
+          <h3>4.2.3 Functional Requirements</h3>
+          <section>
+            <h4>4.2.3.1 Software capabilities</h4>
+            <p>none</p>
+          </section>
+          <section>
+            <h4>4.2.3.2 Error conditioning</h4>
+            <p>TBD</p>
+          </section>
+        </section>
+      </section>
+      <section>
+        <h2>4.3 Create feedback form</h2>
+        <section>
+          <h3>4.3.1 Description and Priority</h3>
+          <p>A user can create a form in wich there are questions added regarding the "thing" that is yet to receive feedback.
+          </p>
+        </section>
+        <section>
+          <h3>4.3.2 Stimulus/Response Sequences</h3>
+          <p>
+          Any page navbar: click on "Add product" >> click on "Add question"
+          </p>
+        </section>
+        <section>
+          <h3>4.3.3 Functional Requirements</h3>
+          <section>
+            <h4>4.3.3.1 Software capabilities</h4>
+            <p>Sign In : the user must be logged in before creating a form. Else the user is denied.</p>
+          </section>
+          <section>
+            <h4>4.3.3.2 Error conditioning</h4>
+            <p>If the user is not logged in it will automaticaly be sent to the "Login" page.</p>
+          </section>
+        </section>
 
-    <h1 id="system-features">4. System Features</h1>
-    <h2>4.1 Sign IN</h2>
-      <h3>4.1.1 Description and Priority</h3>
-      <p>A user is identified via a <i>username</i> and a <i>password</i> and enables private features as: 
-        <b>Add Product</b> and <b>View Archive</b>.
-      </p>
-
-      <h3>4.1.2 Stimulus/Response Sequences</h3>
-      <p>
-        <i>Home</i> page navbar: click on "Login" >> <i>Login</i> page: click on "Sign In" >> 
-        enter <i>username</i> and <i>password</i> >> click on "Sign In"
-      </p>
-
-      <h3>4.1.3 Functional Requirements</h3>
-        <h4>4.1.3.1 Software capabilities</h4>
-          <p>none</p>
-        <h4>4.1.3.2 Error conditioning</h4>
-          <p>TBD</p>
-
-    
-    
-    <h2>4.2 Sign UP</h2>
-      <h3>4.2.1 Description and Priority</h3>
-        <p>A user can create an account providing an <i>email</i> and choosing an <i>username</i> and a <i>password</i>.</p>
-    
-      <h3>4.2.2 Stimulus/Response Sequences</h3>
-        <p>
-          <i>Home</i> page navbar: click on "Login" >> <i>Login</i> page: click on "Sign Up" >> 
-          enter <i>email</i>,<i>username</i>,<i>password</i> >> click on "Create account"
-        </p>
-    
-      <h3>4.2.3 Functional Requirements</h3>
-        <h4>4.2.3.1 Software capabilities</h4>
-          <p>none</p>
-        <h4>4.2.3.2 Error conditioning</h4>
-          <p>TBD</p>
-
-
-    <h2>4.3 Create feedback form</h2>
-<h3>4.3.1 Description and Priority</h3>
-<p>A user can create a form in wich there are questions added regarding the "thing" that is yet to receive feedback.
-</p>
-    
-<h3>4.3.2 Stimulus/Response Sequences</h3>
-<p>
-Any page navbar: click on "Add product" >> click on "Add question"
-</p>
-    
-<h3>4.3.3 Functional Requirements</h3>
-<h4>4.3.3.1 Software capabilities</h4>
-<p>Sign In : the user must be logged in before creating a form. Else the user is denied.</p>
-<h4>4.3.3.2 Error conditioning</h4>
-<p>If the user is not logged in it will automaticaly be sent to the "Login" page.</p>
-
-
-
-<h2>4.4 Provide feedback</h2>
-<h3>4.4.1 Description and Priority</h3>
-<p>A user can access a valid form and answer to all its questions.
-</p>
-    
-<h3>4.4.2 Stimulus/Response Sequences</h3>
-<p>
-<i>Home</i> page navbar: click on "View Products" >> <i>View Products</i> page: scroll and choose a form >> 
-enter answer >> click on "Submit"
-</p>
-    
-<h3>4.4.3 Functional Requirements</h3>
-<h4>4.4.3.1 Software capabilities</h4>
-<p>none</p>
-<h4>4.4.3.2 Error conditioning</h4>
-<p>TBD</p>
-    
-
-<h2>4.5 Access statistics</h2>
-<h3>4.5.1 Description and Priority</h3>
-<p>A user can view statistics regarding past forms that are no longer available for feedback.
-</p>
-    
-<h3>4.5.2 Stimulus/Response Sequences</h3>
-<p>
-<i>Home</i> page navbar: click on "View archive" >> <i>View archive</i> page: scroll and choose form
-</p>
-    
-<h3>4.5.3 Functional Requirements</h3>
-<h4>4.5.3.1 Software capabilities</h4>
-<p>Sign IN: the user must be logged in before having access to previous forms.</p>
-<h4>4.5.3.2 Error conditioning</h4>
-<p>If the user is not logged in it will automaticaly be sent to the "Login" page.</p>
-
+      </section>
+      <section>
+        <h2>4.4 Provide feedback</h2>
+        <section>
+          <h3>4.4.1 Description and Priority</h3>
+          <p>A user can access a valid form and answer to all its questions.
+          </p>
+        </section>
+        <section>
+          <h3>4.4.2 Stimulus/Response Sequences</h3>
+          <p>
+          <i>Home</i> page navbar: click on "View Products" >> <i>View Products</i> page: scroll and choose a form >> 
+          enter answer >> click on "Submit"
+          </p>
+        </section>
+        <section>
+          <h3>4.4.3 Functional Requirements</h3>
+          <section>
+            <h4>4.4.3.1 Software capabilities</h4>
+            <p>none</p>
+          </section>
+          <section>
+            <h4>4.4.3.2 Error conditioning</h4>
+            <p>TBD</p>
+          </section>
+        </section>
+      </section>
+      <section>
+        <h2>4.5 Access statistics</h2>
+        <section>
+          <h3>4.5.1 Description and Priority</h3>
+          <p>A user can view statistics regarding past forms that are no longer available for feedback.
+          </p>
+        </section>
+        <section>
+          <h3>4.5.2 Stimulus/Response Sequences</h3>
+          <p>
+          <i>Home</i> page navbar: click on "View archive" >> <i>View archive</i> page: scroll and choose form
+          </p>
+        </section>
+        <section>
+          <h3>4.5.3 Functional Requirements</h3>
+          <section>
+            <h4>4.5.3.1 Software capabilities</h4>
+            <p>Sign IN: the user must be logged in before having access to previous forms.</p>
+          </section>
+          <section>
+            <h4>4.5.3.2 Error conditioning</h4>
+            <p>If the user is not logged in it will automaticaly be sent to the "Login" page.</p>
+          </section>
+        </section>
+      </section>
+    </section>
 
 </body>
 </html>
