@@ -70,10 +70,30 @@
 
 
     <h2>2.2 Product Functions</h2>
+    <p>The main functions a user can perform are:</p>
+    <ul>
+      <li>Sign IN</li>
+      <li>Sing UP</li>
+      <li>Create feedback form</li>
+      <li>Provide a feedback</li>
+      <li>Access statistics about past forms</li>
+    </ul>
 
     <h2>2.3 User Classes and Characteristics</h2>
+    <p>There are no specific groups of users targeted for this platform. Anyone can give a feedback anonimously
+      or can create an account in order to request a feedback.
+    </p>
+    <p>Shortly, anyone passionate about feedback.</p>
 
     <h2>2.4 Operating Environment</h2>
+      <h3>2.4.1 Hardware</h3>
+      <p>In our context personal laptops are used.</p>
+
+      <h3>2.4.2 Operating System</h3>
+      <p>One developer uses Windows while the second developer uses Linux.</p>
+
+      <h3>2.4.3 Aditional software components</h3>
+      <p><a href="https://en.wikipedia.org/wiki/XAMPP"><strong>XAMPP</strong></a> is used as web server for this project providing <b>Apache</b>,<b>MySQL</b> and <b>PHP</b> packages.</p>
 
     <h2>2.5 Design and Implementation Constraints</h2>
 
@@ -145,7 +165,95 @@
 
 
     <h1 id="system-features">4. System Features</h1>
-    <h2>4.1 System Feature 1</h2>
+    <h2>4.1 Sign IN</h2>
+      <h3>4.1.1 Description and Priority</h3>
+      <p>A user is identified via a <i>username</i> and a <i>password</i> and enables private features as: 
+        <b>Add Product</b> and <b>View Archive</b>.
+      </p>
+
+      <h3>4.1.2 Stimulus/Response Sequences</h3>
+      <p>
+        <i>Home</i> page navbar: click on "Login" >> <i>Login</i> page: click on "Sign In" >> 
+        enter <i>username</i> and <i>password</i> >> click on "Sign In"
+      </p>
+
+      <h3>4.1.3 Functional Requirements</h3>
+        <h4>4.1.3.1 Software capabilities</h4>
+          <p>none</p>
+        <h4>4.1.3.2 Error conditioning</h4>
+          <p>TBD</p>
+
+    
+    
+    <h2>4.2 Sign UP</h2>
+      <h3>4.2.1 Description and Priority</h3>
+        <p>A user can create an account providing an <i>email</i> and choosing an <i>username</i> and a <i>password</i>.</p>
+    
+      <h3>4.2.2 Stimulus/Response Sequences</h3>
+        <p>
+          <i>Home</i> page navbar: click on "Login" >> <i>Login</i> page: click on "Sign Up" >> 
+          enter <i>email</i>,<i>username</i>,<i>password</i> >> click on "Create account"
+        </p>
+    
+      <h3>4.2.3 Functional Requirements</h3>
+        <h4>4.2.3.1 Software capabilities</h4>
+          <p>none</p>
+        <h4>4.2.3.2 Error conditioning</h4>
+          <p>TBD</p>
+
+
+    <h2>4.3 Create feedback form</h2>
+<h3>4.3.1 Description and Priority</h3>
+<p>A user can create a form in wich there are questions added regarding the "thing" that is yet to receive feedback.
+</p>
+    
+<h3>4.3.2 Stimulus/Response Sequences</h3>
+<p>
+Any page navbar: click on "Add product" >> click on "Add question"
+</p>
+    
+<h3>4.3.3 Functional Requirements</h3>
+<h4>4.3.3.1 Software capabilities</h4>
+<p>Sign In : the user must be logged in before creating a form. Else the user is denied.</p>
+<h4>4.3.3.2 Error conditioning</h4>
+<p>If the user is not logged in it will automaticaly be sent to the "Login" page.</p>
+
+
+
+<h2>4.4 Provide feedback</h2>
+<h3>4.4.1 Description and Priority</h3>
+<p>A user can access a valid form and answer to all its questions.
+</p>
+    
+<h3>4.4.2 Stimulus/Response Sequences</h3>
+<p>
+<i>Home</i> page navbar: click on "View Products" >> <i>View Products</i> page: scroll and choose a form >> 
+enter answer >> click on "Submit"
+</p>
+    
+<h3>4.4.3 Functional Requirements</h3>
+<h4>4.4.3.1 Software capabilities</h4>
+<p>none</p>
+<h4>4.4.3.2 Error conditioning</h4>
+<p>TBD</p>
+    
+
+<h2>4.5 Access statistics</h2>
+<h3>4.5.1 Description and Priority</h3>
+<p>A user can view statistics regarding past forms that are no longer available for feedback.
+</p>
+    
+<h3>4.5.2 Stimulus/Response Sequences</h3>
+<p>
+<i>Home</i> page navbar: click on "View archive" >> <i>View archive</i> page: scroll and choose form
+</p>
+    
+<h3>4.5.3 Functional Requirements</h3>
+<h4>4.5.3.1 Software capabilities</h4>
+<p>Sign IN: the user must be logged in before having access to previous forms.</p>
+<h4>4.5.3.2 Error conditioning</h4>
+<p>If the user is not logged in it will automaticaly be sent to the "Login" page.</p>
+
 
 </body>
 </html>
