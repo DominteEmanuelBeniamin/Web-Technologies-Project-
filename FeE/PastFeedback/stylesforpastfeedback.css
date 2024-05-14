@@ -38,26 +38,20 @@
   .mainRec {
     background-color: #CEC5B6;
     width: 50%;
-    max-width: 700px;
-    min-height: 150px;
-    margin: 0 auto; 
-    padding: 10px;
+    max-width: 700px; 
+    height: 150px;
+    margin: 20px auto 0 auto; 
+    padding: 20px;
     position: relative;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    white-space: normal;
-    display: flex; 
-    align-items: center; 
-  }
-  
-  .mainRec h1 {
-    text-align: left;
+    align-items: center;
+}
+
+.mainRec h1{
+    text-align: left; 
+    position: absolute; 
+    left: 2%; 
     color: #73005C;
-    font-size: 24px; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-right: 10px;
-  }
-  
+}
 
 .mainRec h1 {
     font-size: 3vw; 

@@ -21,28 +21,89 @@
 </div>
 
 <div class="mainRec">
-    <h1>Add a product for feedback</h1>
+    <h1>Add a Product for Feedback</h1>
 </div>
 
 <div class="formSection">
-    <form id="addProductForm" enctype="multipart/form-data">
-        <label for="productImage">Product Image:</label>
-        <input type="file" id="productImage" name="productImage" accept="image/*"><br><br>
+    <form id="addProductForm" enctype="multipart/form-data" action="add_product.php" method="post">
+        <div class="form-group">
+            <label for="productImage">Product Image:</label>
+            <input type="file" id="productImage" name="productImage" accept="image/*">
+        </div>
         
-        <label for="questionType">Question Type:</label>
-        <select id="questionType" name="questionType">
-            <option value="quality">Quality</option>
-            <option value="design">Design</option>
-            <option value="usability">Usability</option>
-            <option value="other">Other</option>
-        </select>
-        <button type="button" onclick="addQuestion()">Add Question</button><br><br>
+        <div class="form-group">
+            <label for="questionType">Question Type:</label>
+            <select id="questionType" name="questionType">
+                <option value="single">Single Answer</option>
+                <option value="multiple">Multiple Answers</option>
+                <option value="text">Text Answer</option>
+            </select>
+            <button type="button" onclick="addQuestion()">Add Question</button>
+        </div>
+
+        <div id="questionsContainer"></div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit">
+        </div>
     </form>
 </div>
 
 <script>
 function addQuestion() {
-    alert('Add question functionality to be implemented.');
+    const questionType = document.getElementById('questionType').value;
+    const questionsContainer = document.getElementById('questionsContainer');
+    
+    const questionDiv = document.createElement('div');
+    questionDiv.classList.add('question');
+    
+    const questionHeader = document.createElement('div');
+    questionHeader.classList.add('question-header');
+    
+    const questionInput = document.createElement('input');
+    questionInput.type = 'text';
+    questionInput.name = 'questions[]';
+    questionInput.placeholder = 'Untitled Question';
+    questionHeader.appendChild(questionInput);
+    
+    const questionTypeSpan = document.createElement('span');
+    questionTypeSpan.classList.add('question-type');
+    questionTypeSpan.innerText = questionType.charAt(0).toUpperCase() + questionType.slice(1) + ' choice';
+    questionHeader.appendChild(questionTypeSpan);
+    
+    questionDiv.appendChild(questionHeader);
+
+    if (questionType === 'single' || questionType === 'multiple') {
+        for (let i = 0; i < 3; i++) {
+            const optionDiv = document.createElement('div');
+            optionDiv.classList.add('option');
+
+            const optionInput = document.createElement('input');
+            optionInput.type = (questionType === 'single') ? 'radio' : 'checkbox';
+            optionInput.name = 'options[]';
+
+            const optionLabel = document.createElement('input');
+            optionLabel.type = 'text';
+            optionLabel.name = 'options[]';
+            optionLabel.placeholder = 'Option ' + (i + 1);
+
+            optionDiv.appendChild(optionInput);
+            optionDiv.appendChild(optionLabel);
+            questionDiv.appendChild(optionDiv);
+        }
+    } else if (questionType === 'text') {
+        const textAnswerDiv = document.createElement('div');
+        textAnswerDiv.classList.add('text-answer');
+
+        const textAnswerInput = document.createElement('textarea');
+        textAnswerInput.name = 'textAnswers[]';
+        textAnswerInput.placeholder = 'Your answer';
+        textAnswerDiv.appendChild(textAnswerInput);
+
+        questionDiv.appendChild(textAnswerDiv);
+    }
+
+    questionsContainer.appendChild(questionDiv);
 }
 </script>
 

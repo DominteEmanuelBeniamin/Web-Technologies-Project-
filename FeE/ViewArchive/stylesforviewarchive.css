@@ -38,27 +38,28 @@ body {
 
 .mainRec {
   background-color: #CEC5B6;
-  margin: auto;
   width: 50%;
   max-width: 700px;
   min-height: 150px;
+  margin: 20px auto 0 auto;
   padding: 10px;
   position: relative;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  white-space: normal;
-  display: flex; 
-  align-items: center; 
-}
+  align-items: center;
+  overflow-wrap: break-word; 
+  word-wrap: break-word; 
+  white-space: normal; }
 
 .mainRec h1 {
   text-align: left;
+  position: absolute;
+  left: 2%;
   color: #73005C;
-  font-size: 24px; 
+  font-size: 3vw;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  margin-right: 10px; 
+  top: 20%;
+  right: 2%; 
+  overflow-wrap: break-word; 
 }
-
 
 .product-list {
 display: flex;
