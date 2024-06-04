@@ -3,11 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Add Product</title> 
 <link rel="stylesheet" type="text/css" href="stylesforaddproduct.css">
+<title>Add Feedback Form</title>
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+  }
+
+  .logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: 100px; 
+    height: 50px; 
+  }
+
+  .nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .mainRec {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .formSection {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .question {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .question-type {
+    margin-left: 10px;
+  }
+
+  .options-container {
+    margin-top: 10px;
+  }
+
+  .emotion-wheel {
+    width: 600px;
+    margin: 20px auto;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .emotion-wheel img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .add-option {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .add-question {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+  }
+
+  .delete-question {
+    margin-left: 10px;
+  }
+</style>
 </head>
 <body>
-    
+
 <div class="navbar">
   <div class="logo">
     <img src="../logo.jpg" alt="Logo">
@@ -21,90 +117,92 @@
 </div>
 
 <div class="mainRec">
-    <h1>Add a Product for Feedback</h1>
+    <h1>Add a Feedback Form</h1>
 </div>
 
 <div class="formSection">
-    <form id="addProductForm" enctype="multipart/form-data" action="add_product.php" method="post">
-        <div class="form-group">
-            <label for="productImage">Product Image:</label>
-            <input type="file" id="productImage" name="productImage" accept="image/*">
-        </div>
-        
-        <div class="form-group">
-            <label for="questionType">Question Type:</label>
-            <select id="questionType" name="questionType">
-                <option value="single">Single Answer</option>
-                <option value="multiple">Multiple Answers</option>
-                <option value="text">Text Answer</option>
-            </select>
-            <button type="button" onclick="addQuestion()">Add Question</button>
-        </div>
+  <form action="process_feedback.php" method="POST">
+    <div class="form-group">
+      <label for="formTitle">Form Title</label>
+      <input type="text" id="formTitle" name="formTitle" required>
+    </div>
+    <div class="form-group">
+      <label for="formDescription">Form Description</label>
+      <textarea id="formDescription" name="formDescription" rows="4" required></textarea>
+    </div>
 
-        <div id="questionsContainer"></div>
-
-        <div class="form-group">
-            <input type="submit" value="Submit">
+    <div class="question">
+      <div class="question-header">
+        <input type="text" id="question" name="question[]" value="How do you feel about this?" readonly>
+        <select name="questionType[]" class="question-type" onchange="handleQuestionTypeChange(this)" title="Question Type">
+          <option value="emotion">Emotion</option>
+          <option value="paragraph">Paragraph</option>
+          <option value="multipleChoice">Multiple Choice</option>
+        </select>
+        <button type="button" class="delete-question" onclick="deleteQuestion(this)">Delete</button>
+      </div>
+      <div class="options-container">
+        <div class="emotion-wheel">
+          <img src="emotion_wheel.png" alt="Emotion Wheel">
+          <!-- Add areas for each segment of the wheel as needed -->
         </div>
-    </form>
+        <input type="hidden" name="selectedEmotion" id="selectedEmotion">
+      </div>
+      <button type="button" class="add-option" style="display: none;" onclick="addOption(this)">Add Option</button>
+    </div>
+
+    <button type="button" class="add-question">Add Another Question</button>
+    <div class="form-group">
+      <input type="submit" value="Submit Form">
+    </div>
+  </form>
 </div>
 
 <script>
-function addQuestion() {
-    const questionType = document.getElementById('questionType').value;
-    const questionsContainer = document.getElementById('questionsContainer');
-    
-    const questionDiv = document.createElement('div');
-    questionDiv.classList.add('question');
-    
-    const questionHeader = document.createElement('div');
-    questionHeader.classList.add('question-header');
-    
-    const questionInput = document.createElement('input');
-    questionInput.type = 'text';
-    questionInput.name = 'questions[]';
-    questionInput.placeholder = 'Untitled Question';
-    questionHeader.appendChild(questionInput);
-    
-    const questionTypeSpan = document.createElement('span');
-    questionTypeSpan.classList.add('question-type');
-    questionTypeSpan.innerText = questionType.charAt(0).toUpperCase() + questionType.slice(1) + ' choice';
-    questionHeader.appendChild(questionTypeSpan);
-    
-    questionDiv.appendChild(questionHeader);
+function handleQuestionTypeChange(selectElement) {
+  const questionDiv = selectElement.closest('.question');
+  const optionsContainer = questionDiv.querySelector('.options-container');
+  const addOptionButton = questionDiv.querySelector('.add-option');
 
-    if (questionType === 'single' || questionType === 'multiple') {
-        for (let i = 0; i < 3; i++) {
-            const optionDiv = document.createElement('div');
-            optionDiv.classList.add('option');
+  optionsContainer.innerHTML = '';
+  addOptionButton.style.display = 'none';
 
-            const optionInput = document.createElement('input');
-            optionInput.type = (questionType === 'single') ? 'radio' : 'checkbox';
-            optionInput.name = 'options[]';
-
-            const optionLabel = document.createElement('input');
-            optionLabel.type = 'text';
-            optionLabel.name = 'options[]';
-            optionLabel.placeholder = 'Option ' + (i + 1);
-
-            optionDiv.appendChild(optionInput);
-            optionDiv.appendChild(optionLabel);
-            questionDiv.appendChild(optionDiv);
-        }
-    } else if (questionType === 'text') {
-        const textAnswerDiv = document.createElement('div');
-        textAnswerDiv.classList.add('text-answer');
-
-        const textAnswerInput = document.createElement('textarea');
-        textAnswerInput.name = 'textAnswers[]';
-        textAnswerInput.placeholder = 'Your answer';
-        textAnswerDiv.appendChild(textAnswerInput);
-
-        questionDiv.appendChild(textAnswerDiv);
-    }
-
-    questionsContainer.appendChild(questionDiv);
+  if (selectElement.value === 'multipleChoice') {
+    addOptionButton.style.display = 'inline-block';
+    addOption(optionsContainer);
+    addOption(optionsContainer);
+  } else if (selectElement.value === 'emotion') {
+    const emotionWheel = document.createElement('div');
+    emotionWheel.className = 'emotion-wheel';
+    emotionWheel.innerHTML = '<img src="emotion_wheel.png" alt="Emotion Wheel">';
+    optionsContainer.appendChild(emotionWheel);
+  }
 }
+
+function addOption(buttonOrContainer) {
+  const optionsContainer = buttonOrContainer.closest ? buttonOrContainer.closest('.question').querySelector('.options-container') : buttonOrContainer;
+
+  const newOption = document.createElement('div');
+  newOption.className = 'option';
+  newOption.innerHTML = '<input type="checkbox" disabled> <input type="text" name="option[]" placeholder="New Option">';
+  optionsContainer.appendChild(newOption);
+}
+
+function deleteQuestion(button) {
+  const questionDiv = button.closest('.question');
+  questionDiv.remove();
+}
+
+document.querySelector('.add-question').addEventListener('click', function() {
+  const newQuestion = document.querySelector('.question').cloneNode(true);
+  newQuestion.querySelector('input[name="question[]"]').value = '';
+  newQuestion.querySelector('.options-container').innerHTML = '';
+  newQuestion.querySelector('.add-option').style.display = 'none';
+  document.querySelector('.formSection form').insertBefore(newQuestion, document.querySelector('.add-question'));
+  newQuestion.querySelector('.question-type').addEventListener('change', function() {
+    handleQuestionTypeChange(this);
+  });
+});
 </script>
 
 </body>
