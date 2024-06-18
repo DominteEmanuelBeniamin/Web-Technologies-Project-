@@ -29,7 +29,7 @@
     <!--<h1>You have feedback</h1>-->
     <h1><?php echo "Hello ". $_SESSION['username'] ?></h1>
  <!-- <h2>We have a place where feedback is wanted</h2>
-  <p>PS : For describing your most intense emotions, Plutchik's Wheel of Emotion is utilized.</p>
+  <p>PS : For describing your most intense emotions, Plutchik's Wheel of Emotion is utilized.</p>-->
 </div>
 
 

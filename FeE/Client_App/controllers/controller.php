@@ -1,5 +1,15 @@
 <?php
-//session_start();
+
+if (isset($_COOKIE['PHPSESSID']))
+{
+    session_start(); // resume session
+   // echo "session is resumed.";
+   $login = true;
+}
+else
+    //echo "no session to resume.";
+$login = false;
+
 
 function login(){};
 

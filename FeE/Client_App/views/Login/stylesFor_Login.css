@@ -34,7 +34,7 @@ body {
     color: #CEC5B6;
 }
 
-.mainRec {
+.mainRec, .optionalRec {
     background-color: #CEC5B6;
     width: 50%;
     max-width: 700px;
@@ -49,6 +49,12 @@ body {
     display: flex; 
     align-items:center; 
   }
+
+.optionalRec h1 {
+  text-align: left;
+  color:#CEC5B6;
+  font-size: 16px;
+}
  
 .mainRec h1 {
     text-align: left;

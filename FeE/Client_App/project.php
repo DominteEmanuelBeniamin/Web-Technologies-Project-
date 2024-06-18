@@ -15,7 +15,7 @@
   <div class="nav-links">
     <a href="">Home</a>
     <a href="/FeE/Client_App/controllers/controller.php?page=viewproducts">View products</a>
-    <a href="/FeE/Client_App/controllers/controller.php?page=">Add product</a>
+    <a href="/FeE/Client_App/controllers/controller.php?page=addproduct">Add product</a>
     <a href="/FeE/Client_App/controllers/controller.php?page=login">Login</a>
   </div>
 </div>

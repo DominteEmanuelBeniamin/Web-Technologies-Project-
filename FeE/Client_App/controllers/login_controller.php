@@ -1,16 +1,27 @@
 <?php
 
-require_once "../models/check_login.php";
-$user_exists = isValid();
-if($user_exists)
+if(isset($_POST['signin']))
 {
-    session_start();
-    setcookie("New_session",session_id(),time()+3600,"/");
-    $_SESSION['logged_in'] = true;
-    $_SESSION['username'] = $_POST['username'];
+    require_once "../models/check_login.php";
+    $user_exists = isValid();
+    if($user_exists == true)
+    {
+        session_start();
+        //setcookie("New_session",session_id(),time()+3600,"/");
+        $_SESSION['logged_in'] = true;
+        $_SESSION['username'] = $_POST['username'];
 
-    header("Location: /FeE/Client_App/views/Home/home.php");
-    exit;
+        header("Location: /FeE/Client_App/views/Home/home.php");
+        exit;
+    }
+    else
+    {
+        $problem = 1; 
+        require_once "../views/Login/login.php";
+    }
 }
-else 
-    require_once "../views/Login/login.html";
+else if(isset($_POST['register']))
+{
+    require_once "../models/create_account.php";
+}
+
