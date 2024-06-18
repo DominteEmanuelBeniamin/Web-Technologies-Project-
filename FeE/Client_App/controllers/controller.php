@@ -1,44 +1,43 @@
 <?php
-class Controller
-{
-    public function choose_view($page_name)
-    {
-        switch ($page_name) {
-            case "login":
-                require_once "../views/Login/login.html"; 
-                break;
+//session_start();
+
+function login(){};
+
+function choose_view($page_name){
+    switch ($page_name) {
+        case "login":
+            require_once "../views/Login/login.html"; 
+            break;
+        
+        case "viewproducts":
+            require_once "../views/ViewProducts/viewproducts.html";
+            break;
+
+        case "addproduct":
+            global $login;
+            if($login == false)
+            {
+                header("Location: /FeE/Client_App/views/Login/login.html");
+                exit;
+            }
+            else{
+                require_once "../views/AddProduct/addproduct.html";
+            }
             
-            case "viewproducts":
-                require_once "../views/ViewProducts/viewproducts.html";
-                break;
+            break;
+        case "logout":
+            require_once "../views/Logout/logout.php";
+            break;
 
-            default:
-                echo "no page";
-                break;
-        }
+        default:
+            echo "no page";
+            break;
     }
-
 }
 
-$controller = new Controller;
+
 
 if( isset($_GET["page"]) )
-    $controller->choose_view($_GET["page"]);
+    choose_view($_GET["page"]);
 else
     echo "problem at choose view.";
-
-
-
-/*
-if( isset($_GET["page"]))
-{
-    if( $_GET["page"] == "login") {
-        require_once "../views/Login/login.html"; 
-    }
-    else
-        require_once "../views/ViewProducts/viewproducts.html";
-}
-else
-    echo "no params";
-
-*/

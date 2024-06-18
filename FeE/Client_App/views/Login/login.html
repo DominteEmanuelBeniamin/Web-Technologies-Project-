@@ -49,7 +49,7 @@
             </div>
         
             <div id="signIn" class="registration" style="display: none;">
-              <form action="" class="fsignIn animation">
+              <form action="/FeE/Client_App/controllers/login_controller.php" method="post" class="fsignIn animation">
                 <div class="container">
                   <h1>Sign In</h1>
                   <hr>
@@ -61,7 +61,7 @@
         
                   <div class="actionsignIn">
                     
-                    <button type="submit" class="submitsignInbutton" onclick="alert('Login successful. -no backend yet')">Sign in</button>
+                    <button type="submit" name="signin" class="submitsignInbutton">Sign in</button>
                     <button type="button" onclick="close_('signIn')" class="cancelbutton">Cancel</button>
                   </div>
                 </div>
