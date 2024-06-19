@@ -6,7 +6,7 @@ global $response;
 
 parse_str($url['query'],$url_query);
 
-if (sizeof($url_query) != 1){
+if (sizeof($url_query) != 2){
     $response["Error"] = "Incorect number of arguments in query.";
     echo json_encode($response,JSON_PRETTY_PRINT);
     exit;
@@ -20,7 +20,7 @@ if(!isset($url_query['username'])){
 
 $database = new Db();
 
-$sql_stmt = "select count(username) from accounts where username='". $url_query['username'] ."'";
+$sql_stmt = "select count(username) from accounts where username='". $url_query['username'] ."' and password='". $url_query['password']."'";
 
 $result_from_query = $database->execute_query($sql_stmt);
 

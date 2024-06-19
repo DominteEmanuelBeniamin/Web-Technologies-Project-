@@ -23,5 +23,16 @@ if(isset($_POST['signin']))
 else if(isset($_POST['register']))
 {
     require_once "../models/create_account.php";
+    $created = account_created();
+    if($created === "true")
+    {
+        $confirm_acount_created = true;
+        require_once "../views/Login/login.php";
+    }
+    else
+    {
+        $confirm_acount_created = false;
+        require_once "../views/Login/login.php";
+    }
 }
 

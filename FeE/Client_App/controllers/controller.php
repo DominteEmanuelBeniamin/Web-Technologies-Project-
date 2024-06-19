@@ -16,7 +16,7 @@ function login(){};
 function choose_view($page_name){
     switch ($page_name) {
         case "login":
-            require_once "../views/Login/login.html"; 
+            require_once "../views/Login/login.php"; 
             break;
         
         case "viewproducts":

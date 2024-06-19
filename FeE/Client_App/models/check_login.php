@@ -3,7 +3,7 @@
 function isValid(){
     $ch = curl_init();
     
-    $url = "http://localhost/FeE/Users_Manager/users/user?username=". $_POST['username'];
+    $url = "http://localhost/FeE/Users_Manager/users/user?username=". $_POST['username']."&password=". $_POST['password'];
 
     curl_setopt($ch,CURLOPT_URL, $url); //set the url 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // the response cand be stored in a variable
@@ -11,9 +11,12 @@ function isValid(){
     $ch_response = curl_exec($ch);
 
     $response = json_decode($ch_response,true);
-
+    curl_close($ch);
+    
     if(isset($response['Response']))
         return $response['Response'];
     else
         return "Error";
+
+        
 }

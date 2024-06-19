@@ -22,6 +22,7 @@ switch(strtoupper($_SERVER['REQUEST_METHOD']))
         break;
     case 'POST':
         require_once "./post.php";
+        break;
     default:
         echo "Error: Request method not supported.";
         break;

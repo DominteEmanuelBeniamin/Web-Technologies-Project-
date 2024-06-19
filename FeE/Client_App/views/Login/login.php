@@ -36,12 +36,12 @@
                   <label for="password"><b>Password</b></label>
                   <input type="password" name="password" required>
         
-                  <label for="password-r"><b>Repeat Password</b></label>
-                  <input type="password" name="password-r" required>
+                  <!--<label for="password-r"><b>Repeat Password</b></label>
+                  <input type="password" name="password-r" required>-->
         
                   <div class="actionsignUp">
                     
-                    <button type="submit" name="register" class="submitsignUpbutton" onclick="alert('Account created. -no backend yet')">Create account</button>
+                    <button type="submit" name="register" class="submitsignUpbutton">Create account</button>
                     <button type="button" onclick="close_('signUp')" class="cancelbutton">Cancel</button>
                   </div>
                 </div>
@@ -78,9 +78,18 @@
             </script>
 
         </div>
-        <?php if($problem == 1) { ?>
+        <?php if(isset($problem) && $problem== 1) { ?>
           <div class="optionalRec">
            <h1>Username or password invalid!</h1>
+          </div>
+        <?php } ?>
+        <?php if(isset($confirm_acount_created) && $confirm_acount_created== true) { ?>
+          <div class="optionalRec">
+           <h1>Account succesfully created! You can sign in.</h1>
+          </div>
+        <?php }else if(isset($confirm_acount_created) && $confirm_acount_created== false) {?>
+          <div class="optionalRec">
+           <h1>This account allready exists!</h1>
           </div>
         <?php } ?>
     </body>
