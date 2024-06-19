@@ -10,11 +10,11 @@
 
         <div class="navbar">
             <div class="logo">
-                <img src="../logo.jpg" alt="Logo">
+                <img src="/FeE/Client_App/views/logo.jpg" alt="Logo">
             </div>
             <div class="nav-links">
-                <a href="../../project.html">Home</a>
-                <a href="../ViewProducts/viewproducts.html">View products</a>
+                <a href="/FeE/Client_App/project.php">Home</a>
+                <a href="/FeE/Client_App/controllers/controller.php?page=viewproducts">View products</a>
             </div>
         </div>
 

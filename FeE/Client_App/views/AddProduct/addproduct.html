@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="stylesforaddproduct.css">
+<link rel="stylesheet" type="text/css" href="/FeE/Client_App/views/AddProduct/stylesforaddproduct.css">
 <title>Add Feedback Form</title>
 <style>
-  .navbar {
+  /*.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     background-color: #f8f8f8;
-  }
+  }*/
 
   .logo img {
     max-width: 100%;
@@ -21,13 +21,13 @@
     width: 100px; 
     height: 50px; 
   }
-
+/*
   .nav-links a {
     margin: 0 15px;
     text-decoration: none;
     color: #333;
   }
-
+*/
   .mainRec {
     text-align: center;
     margin: 20px 0;
@@ -106,13 +106,15 @@
 
 <div class="navbar">
   <div class="logo">
-    <img src="../logo.jpg" alt="Logo">
+    <img src="/FeE/Client_App/views/logo.jpg" alt="Logo">
   </div>
   <div class="nav-links">
-    <a href="../project.html">Home</a>
-    <a href="../ViewProducts/viewproducts.html">View products</a>
-    <a href="../AddProduct/addproduct.html">Add product</a>
-    <a href="../ViewArchive/viewarchive.html">View archive</a>
+    <a href="/FeE/Client_App/controllers/controller.php?page=home">Home</a>
+    <a href="/FeE/Client_App/controllers/controller.php?page=viewproducts">View products</a>
+    <a href="/FeE/Client_App/controllers/controller.php?page=addproduct">Add product</a>
+    <a href="/FeE/Client_App/controllers/controller.php?page=viewarchive">View archive</a>
+    <a href="/FeE/Client_App/controllers/controller.php?page=importexport">Import/Export</a>
+    <a href="/FeE/Client_App/controllers/logout_controller.php">Log out</a>
   </div>
 </div>
 

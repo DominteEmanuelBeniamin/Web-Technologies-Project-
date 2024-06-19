@@ -4,7 +4,7 @@ if(isset($_POST['signin']))
 {
     require_once "../models/check_login.php";
     $user_exists = isValid();
-    if($user_exists == true)
+    if($user_exists === "true")
     {
         session_start();
         //setcookie("New_session",session_id(),time()+3600,"/");

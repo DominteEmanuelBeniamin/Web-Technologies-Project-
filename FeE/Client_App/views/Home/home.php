@@ -1,19 +1,23 @@
 <?php
-    session_start();
+   // if (isset($_COOKIE['PHPSESSID']))
+    //    session_start(); // resume session
+    if (session_status() == PHP_SESSION_NONE) {
+      session_start();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewpor6t" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="stylesFor_Home.css">
+<link rel="stylesheet" type="text/css" href="/FeE/Client_App/views/Home/stylesFor_Home.css">
 </head>
 <body>
   
 
 <div class="navbar">
   <div class="logo">
-    <img src="../logo.jpg" alt="Logo">
+    <img src="/FeE/Client_App/views/logo.jpg" alt="Logo">
   </div>
   <div class="nav-links">
     <a href="">Home</a>

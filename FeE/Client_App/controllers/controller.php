@@ -20,20 +20,23 @@ function choose_view($page_name){
             break;
         
         case "viewproducts":
-            require_once "../views/ViewProducts/viewproducts.html";
+            require_once "../views/ViewProducts/viewproducts.php";
             break;
 
         case "addproduct":
             global $login;
             if($login == false)
             {
-                header("Location: /FeE/Client_App/views/Login/login.html");
+                header("Location: /FeE/Client_App/views/Login/login.php");
                 exit;
             }
             else{
                 require_once "../views/AddProduct/addproduct.html";
             }
             
+            break;
+        case "home":
+            require_once "../views/Home/home.php";
             break;
         case "logout":
             require_once "../views/Logout/logout.php";

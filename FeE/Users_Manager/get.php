@@ -26,12 +26,12 @@ $result_from_query = $database->execute_query($sql_stmt);
 
 $user_exists = $result_from_query->fetch_column();
 if($user_exists > 0){
-    $response["Response"] = true;
+    $response["Response"] = "true";
     echo json_encode($response,JSON_PRETTY_PRINT);
 }
 else
 {
-    $response["Response"] = false;
+    $response["Response"] = "false";
     echo json_encode($response,JSON_PRETTY_PRINT);
 }
     
