@@ -20,7 +20,55 @@ class service
 
     private function processResourceRequest($method,$collection,$id): void
     {
+        switch ($collection) {
+            case 'forms':
+                $this->processRR_Forms($method,$id);
+                break;
+            case 'feedback':
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+    }
 
+    private function processRR_Forms($method,$id): void
+    {
+        switch ($method)
+        {
+            case 'GET':
+                $data = $this->getSingleForm($id);
+                if(empty($data))
+                {
+                    http_response_code(404);
+                    echo json_encode("No such resource.");
+                }
+                else
+                    echo json_encode($data);
+                break;
+            default:
+                http_response_code(405);
+                echo json_encode("Method not supported.");
+                break;
+        }
+    }
+
+    private function getSingleForm($id): array
+    {
+        $sql_stmt = "SELECT form FROM `forms` WHERE id_form =".$id;
+
+        $sql_result = $this->database->execute_query($sql_stmt);
+        
+
+        $row = $sql_result->fetch_assoc();
+        //parse_str($row['form'],$data);
+        if(empty($row['form']))
+            return array();
+        else 
+            $data = json_decode($row['form'],true);  
+        return $data;
+            
     }
 
     private function processCollectionRequest($method,$collection): void
