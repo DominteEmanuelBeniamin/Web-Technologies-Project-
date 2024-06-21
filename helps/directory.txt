@@ -1,0 +1,12 @@
+ Client_App/
+ controllers/
+  addproduct_controller.php
+  controller.php
+ views/
+  addproduct.html
+ models/
+  addform.php
+  
+ Form_adder/
+  submit_form.php
+  db_connection.php
