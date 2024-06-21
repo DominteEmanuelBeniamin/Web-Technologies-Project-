@@ -30,8 +30,16 @@ function choose_view($page_name){
                 header("Location: /FeE/Client_App/views/Login/login.php");
                 exit;
             }
-            else{
-                require_once "../views/AddProduct/addproduct.html";
+            else
+            {
+                //require_once "../views/AddProduct/addproduct.php";
+                if(isset($_GET['status']) and $_GET['status']==="success")
+                {
+                    //$status = $_GET['status'];
+                    require_once "../views/AddProduct/addproduct_success.php";
+                }
+                else
+                    require_once "../views/AddProduct/addproduct.php";
             }
             
             break;
