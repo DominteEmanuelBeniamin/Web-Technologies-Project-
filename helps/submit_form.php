@@ -14,7 +14,7 @@ if (!$username || !$formData) {
 $db = new Db();
 
 
-$query = "SELECT id_user FROM users WHERE username = '" . mysqli_real_escape_string($db->db_handle, $username) . "'";
+$query = "SELECT id FROM accounts WHERE username = '" . mysqli_real_escape_string($db->db_handle, $username) . "'";
 $result = $db->execute_query($query);
 $user = mysqli_fetch_assoc($result);
 
@@ -23,10 +23,11 @@ if (!$user) {
     exit();
 }
 
-$id_user = $user['id_user'];
+$id_user = $user['id'];
+$form_name = $formData['name'];
 $formDataJson = mysqli_real_escape_string($db->db_handle, json_encode($formData));
 
-$query = "INSERT INTO forms (id_user, id_form, form) VALUES ('$id_user', NULL, '$formDataJson')";
+$query = "INSERT INTO forms (id_user, id_form, form_name, form) VALUES ('$id_user', NULL,'$form_name', '$formDataJson')";
 $success = $db->execute_query($query);
 
 if ($success) {

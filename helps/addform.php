@@ -5,7 +5,7 @@ function submitForm($username, $formData) {
         'username' => $username,
         'form' => json_encode($formData)
     ];
-e
+
     $options = [
         'http' => [
             'header' => "Content-Type: application/json\r\n",
