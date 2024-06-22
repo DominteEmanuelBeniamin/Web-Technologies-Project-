@@ -36,24 +36,16 @@
   </div>
 </div>
 <div class="mainRec">
-  <h1>A list with all the available products</h1>
+  <ul>
+    <?php foreach($data as $index => $info) { ?>
+      <li>
+        <a href="<?php echo "/FeE/Client_App/controllers/viewSingleproduct_controller.php?id=".$info['id_form'] ?>">
+          <?php echo $info['form_name'] ?>
+        </a>
+      </li>
+    <?php } ?>
+  </ul>
 </div>
-<div class="product-list">
-  <div class="product">
-    <img src="/FeE/Client_App/views/ProductImages/product1.jpg" alt="Product 1">
-    <a href="../ProductDetails/product1.html">CHEESY NACHOS ~SALSA~
-    </a>
-  </div>
-  <div class="product">
-    <img src="../ProductImages/product2.jpg" alt="Product 2">
-    <a href="../ProductDetails/product1.html">PIZZA MANIFESTO ~PARTIGIANO~</a>
-  </div>
-  <div class="product">
-    <img src="../ProductImages/product3.jpg" alt="Product 3">
-    <a href="../ProductDetails/product1.html">KING'S DEAL ~BURGER KING~</a>
-  </div>
-</div>
-
 
 </body>
 </html>

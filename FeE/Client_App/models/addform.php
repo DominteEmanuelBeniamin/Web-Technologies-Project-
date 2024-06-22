@@ -1,6 +1,6 @@
 <?php
 function submitForm($username, $formData) {
-    $url = "http://localhost/FeE/Form_adder/submit_form.php"; // schimba aici cu xampu 
+    $url = "http://localhost/FeE/Form_adder/submit_form.php"; 
     $data = [
         'username' => $username,
         'form' => $formData

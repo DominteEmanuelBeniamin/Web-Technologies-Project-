@@ -10,16 +10,15 @@ else
     //echo "no session to resume.";
 $login = false;
 
-
-function login(){};
-
-function choose_view($page_name){
+function choose_page($page_name){
     switch ($page_name) {
         case "login":
             require_once "../views/Login/login.php"; 
             break;
         
         case "viewproducts":
+            require_once "../models/viewproducts_model.php";
+            $data = getforms();
             require_once "../views/ViewProducts/viewproducts.php";
             break;
 
@@ -41,11 +40,12 @@ function choose_view($page_name){
                 else
                     require_once "../views/AddProduct/addproduct.php";
             }
-            
             break;
+
         case "home":
             require_once "../views/Home/home.php";
             break;
+
         case "logout":
             require_once "../views/Logout/logout.php";
             break;
@@ -59,6 +59,6 @@ function choose_view($page_name){
 
 
 if( isset($_GET["page"]) )
-    choose_view($_GET["page"]);
+    choose_page($_GET["page"]);
 else
     echo "problem at choose view.";
