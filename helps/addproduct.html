@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Feedback Form</title>
+    <style>
+        .container {
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add a Feedback Form</h1>
+        <form action="/FeE/Client_App/controllers/addproduct_controller.php" method="POST">
+            <div class="form-group">
+                <label for="formTitle">Form Title</label>
+                <input type="text" id="formTitle" name="formTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="formDescription">Form Description</label>
+                <textarea id="formDescription" name="formDescription" rows="4" required></textarea>
+            </div>
+
+            <div class="questions-container">
+                <div class="question">
+                    <div class="question-header">
+                        <input type="text" name="question[]" placeholder="Enter your question here" required>
+                        <button type="button" class="delete-question" onclick="deleteQuestion(this)">Delete</button>
+                    </div>
+                    <div class="options-container"></div>
+                    <button type="button" class="add-option" onclick="addOption(this)">Add Option</button>
+                </div>
+            </div>
+
+            <button type="button" class="add-question">Add Another Question</button>
+            <div class="form-group">
+                <input type="submit" name="submitForm" value="Submit Form">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function addOption(button) {
+            const optionsContainer = button.closest('.question').querySelector('.options-container');
+            const newOption = document.createElement('div');
+            newOption.className = 'option';
+            newOption.innerHTML = `
+                <input type="text" name="option[]" placeholder="Option text">
+                <button type="button" class="delete-option" onclick="deleteOption(this)">Delete</button>
+            `;
+            optionsContainer.appendChild(newOption);
+        }
+
+        function deleteOption(button) {
+            const optionDiv = button.closest('.option');
+            optionDiv.remove();
+        }
+
+        function deleteQuestion(button) {
+            const questionDiv = button.closest('.question');
+            questionDiv.remove();
+        }
+
+        document.querySelector('.add-question').addEventListener('click', function() {
+            const newQuestion = document.createElement('div');
+            newQuestion.className = 'question';
+            newQuestion.innerHTML = `
+                <div class="question-header">
+                    <input type="text" name="question[]" placeholder="Enter your question here" required>
+                    <button type="button" class="delete-question" onclick="deleteQuestion(this)">Delete</button>
+                </div>
+                <div class="options-container"></div>
+                <button type="button" class="add-option" onclick="addOption(this)">Add Option</button>
+            `;
+            document.querySelector('.questions-container').appendChild(newQuestion);
+        });
+    </script>
+</body>
+</html>
