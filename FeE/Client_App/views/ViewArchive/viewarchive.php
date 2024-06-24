@@ -28,7 +28,7 @@
     <?php foreach($data as $index => $info) { ?>
       <li>
         <?php echo $info['form_name'] ?>
-        <a href="<?php echo "/FeE/Client_App/controllers/statistics_controller.php?id=".$info['id_form'] ?>">
+        <a href="<?php echo "/FeE/Client_App/views/Statistics/viewStatistics.php?id=".$info['id_form'] ?>">
           <button type="button" name="show_statistics">Show statistics</button>
         </a>
       </li>
