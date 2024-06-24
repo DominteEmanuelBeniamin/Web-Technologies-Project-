@@ -1,4 +1,6 @@
 <?php
 session_start();
 
-echo $_SESSION['username'];
+require_once "../models/export.php";
+
+downloadData();
