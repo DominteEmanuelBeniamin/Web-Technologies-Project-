@@ -28,16 +28,39 @@
 </div>
 
 <div class="mainRec">
-    <a href="/FeE/Client_App/controllers/import_controller.php">
-       <button  class="sIN">Import</button> 
+
+    <a>
+      <button  class="import_button" onclick="show('importForm')">Import</button> 
     </a>
+    
 
     <a href="/FeE/Client_App/controllers/export_controller.php">
-        <button  class="sUP">Export</button>
+        <button  class="export_button">Export</button>
     </a>
+
+
+
+    <div id="importForm" class="importForm" style="display: none;">
+      <form action="/FeE/Client_App/controllers/import_controller.php" method="post" enctype="multipart/form-data" class="form animation">
+        <div class="container">
+          <label for="file">Filename to import:</label>
+          <input type="file" name="file" id="file" required><br>
+
+          <button type="button" onclick="close_('importForm')" class="cancelbutton">Cancel</button>
+          <input type="submit" name="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+              
      
+    <script>
+              function show(element) {
+                document.getElementById(element).style.display = 'block';
+              }
+              function close_(element) {
+                document.getElementById(element).style.display = "none";
+              }
+            </script>
 </div>
-
-
 </body>
 </html>
