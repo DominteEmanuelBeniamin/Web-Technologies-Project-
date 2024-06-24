@@ -12,33 +12,6 @@ function addfeedback()
 
     $responses_data = array();
 
-    /* cum arata un form
-    {
-    "name": "test6",
-    "description": "test6",
-    "questions": {
-        "question_1": {
-            "text": "ca va?",
-            "type": "write"
-        },
-        "question_2": {
-            "text": "yes,no",
-            "type": "multiple",
-            "options": [
-                "yes",
-                "no"
-            ]
-        }
-    }
-}
-    */
-
-    /* cum arata un feedback
-    {"age":"18-30","sex":"male",
-    "responses":{"Ca va?":"oui oui",
-    "What emotions did you felt when your team scored?": {options: ["bad", "ok" ] }}
-    "emotion" : $emotion}
-    */
     foreach ($form['questions'] as $key => $question)
     {
         $responses_data[$question['text']] = $responses[$key];

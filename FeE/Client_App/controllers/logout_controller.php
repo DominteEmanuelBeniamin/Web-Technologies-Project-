@@ -1,7 +1,12 @@
 <?php
+/**
+ * Se sterge cookie-ul PHPSESSID si se distruge sesiunea
+ *      cu tot cu variabilele din $_SESSION[].
+ * 
+ * Apoi se redirectioneaza catre o pagina.
+ */
 session_start();
-//$_SESSION['logged_in'] = false;
-//setcookie("New_session","",time()-3600,"/");
+
 setcookie("PHPSESSID","",time()-3600,"/");
 session_destroy();
 header("Location: /FeE/Client_App/project.php");

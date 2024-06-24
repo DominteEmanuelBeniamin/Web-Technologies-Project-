@@ -1,9 +1,11 @@
 <?php
+/**
+ * In functie de valorile din $_GET['...'] alege view-ul ce trebuie afisat.
+ */
 
 if (isset($_COOKIE['PHPSESSID']))
 {
     session_start(); // resume session
-   // echo "session is resumed.";
    $login = true;
 }
 else
@@ -63,8 +65,6 @@ function choose_page($page_name){
             break;
     }
 }
-
-
 
 if( isset($_GET["page"]) )
     choose_page($_GET["page"]);

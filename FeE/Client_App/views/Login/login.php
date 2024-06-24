@@ -36,9 +36,6 @@
                   <label for="password"><b>Password</b></label>
                   <input type="password" name="password" required>
         
-                  <!--<label for="password-r"><b>Repeat Password</b></label>
-                  <input type="password" name="password-r" required>-->
-        
                   <div class="actionsignUp">
                     
                     <button type="submit" name="register" class="submitsignUpbutton">Create account</button>

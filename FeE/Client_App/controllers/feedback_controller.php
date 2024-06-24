@@ -1,4 +1,7 @@
 <?php
+/**
+ * Foloseste functia din model si in functie de rezultatul returnat alege un view sau afiseaza un mesaj.
+ */
 if (isset($_COOKIE['PHPSESSID']))
 {
     session_start(); // resume session

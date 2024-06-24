@@ -65,7 +65,7 @@ class service
         
 
         $row = $sql_result->fetch_assoc();
-        //parse_str($row['form'],$data);
+
         if(empty($row['form']))
             return array();
         else 
@@ -125,7 +125,7 @@ class service
     {
         switch ($method) {
             case "GET":
-                //$username = $_GET['id'];
+
                 echo json_encode($this->getArchive());
                 break;
         }
@@ -133,7 +133,7 @@ class service
 
     private function getAll(): array
     {
-        $sql_stmt = "SELECT form_name,id_form FROM `forms`";
+        $sql_stmt = "SELECT form_name,id_form FROM `forms` where CURRENT_DATE-creation_date < 1";
 
         $sql_response = $this->database->execute_query($sql_stmt);
 

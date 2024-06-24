@@ -1,4 +1,14 @@
 <?php
+/**
+ * In functie de formularul completat (signIN sau signUP)
+ *      apeleaza un model corespunzator.
+ * 
+ * Daca se efectueaza o logare se verifica credentialele introduse
+ *      si daca totul este in regula se incepe o sesiune pentru user-ul respectiv.
+ *      Se seteaza $_SESSION['logged_in'] si $_SESSION['username'].
+ * 
+ * Se alege view-ul corespunzator.
+ */
 
 if(isset($_POST['signin']))
 {
@@ -7,7 +17,6 @@ if(isset($_POST['signin']))
     if($user_exists === "true")
     {
         session_start();
-        //setcookie("New_session",session_id(),time()+3600,"/");
         $_SESSION['logged_in'] = true;
         $_SESSION['username'] = $_POST['username'];
 

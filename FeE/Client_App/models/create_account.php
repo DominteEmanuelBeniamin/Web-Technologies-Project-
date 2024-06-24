@@ -2,21 +2,12 @@
 
 function account_created(){
 
-   // $url = "http://localhost/FeE/Users_Manager/users/user";
    $url = "http://localhost/FeE/Users_Manager/users/user?username=". $_POST['username']."&password=". $_POST['password'];
     
-    /*$data_array = array(
-        'username' => $_POST['username'],
-        'password' => $_POST['password']
-    );
-
-    $data = http_build_query($data_array);*/
-
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, true);
-    //curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $ch_response = curl_exec($ch);

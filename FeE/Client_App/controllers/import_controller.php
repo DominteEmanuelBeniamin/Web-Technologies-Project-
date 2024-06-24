@@ -1,4 +1,7 @@
 <?php
+/**
+ * Foloseste functia din model si in functie de rezultat alege un view sau declanseaza o alerta.
+ */
 session_start();
 
 require_once "../models/import.php";

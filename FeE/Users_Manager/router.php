@@ -10,11 +10,6 @@ if($url["path"] != "/FeE/Users_Manager/users/user")
     exit;
 }
 
-//var_dump($url);
-//$url_path = explode('/',$url["path"]);
-//array_shift($url_path);
-//var_dump($url_path);
-
 switch(strtoupper($_SERVER['REQUEST_METHOD']))
 {
     case 'GET':

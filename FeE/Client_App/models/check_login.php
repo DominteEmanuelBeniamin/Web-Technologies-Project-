@@ -5,8 +5,8 @@ function isValid(){
     
     $url = "http://localhost/FeE/Users_Manager/users/user?username=". $_POST['username']."&password=". $_POST['password'];
 
-    curl_setopt($ch,CURLOPT_URL, $url); //set the url 
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // the response cand be stored in a variable
+    curl_setopt($ch,CURLOPT_URL, $url); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 
     $ch_response = curl_exec($ch);
 

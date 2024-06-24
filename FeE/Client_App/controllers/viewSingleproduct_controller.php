@@ -1,4 +1,7 @@
 <?php
+/**
+ * Se apeleaza un model iar informatia primita din functie se trimite catre view.
+ */
 if (isset($_COOKIE['PHPSESSID']))
 {
     session_start(); // resume session
