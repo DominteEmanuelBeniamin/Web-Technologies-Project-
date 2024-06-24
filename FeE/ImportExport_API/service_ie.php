@@ -5,7 +5,7 @@ spl_autoload_register(function ($class) {
 });
 class service_ie
 {
-    public function processRequest($method,?string $username): void
+    public function processRequest($method,$username): void
     {
         switch ($method)
         {
@@ -13,7 +13,7 @@ class service_ie
                 echo json_encode($this->Export($username));
                 break;
             case 'POST':
-                //IMPORT
+                echo json_encode($this->Import($username));
                 break;
             default:
                 http_response_code(405);
@@ -49,5 +49,45 @@ class service_ie
         }
 
         return $data;
+    }
+
+    private function Import($username)
+    {
+        $file_content_array = (array) json_decode(file_get_contents("php://input"),true);
+
+        foreach($file_content_array['forms'] as $key => $form)
+        {
+            $result = $this->Import_addForm($username,$form);
+
+            if ($result['status'] == 'YES') {
+                continue;
+            } else {
+                return "Error submitting form: " . $result['message'];
+            }
+        }
+
+        return "OK";
+    }
+
+    private function Import_addForm($username,$formData): array
+    {
+        $url = "http://localhost/FeE/Form_adder/submit_form.php"; 
+        $data = [
+            'username' => $username,
+            'form' => $formData
+        ];
+
+        $options = [
+            'http' => [
+                'header' => "Content-Type: application/json\r\n",
+                'method' => 'POST',
+                'content' => json_encode($data),
+            ]
+        ];
+
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+
+        return json_decode($result, true);
     }
 }

@@ -1,25 +1,4 @@
 <?php
-function addForm($username, $formData) {
-    $url = "http://localhost/FeE/Form_adder/submit_form.php"; 
-    $data = [
-        'username' => $username,
-        'form' => $formData
-    ];
-
-    $options = [
-        'http' => [
-            'header' => "Content-Type: application/json\r\n",
-            'method' => 'POST',
-            'content' => json_encode($data),
-        ]
-    ];
-
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
-
-    return json_decode($result, true);
-}
-
 function processFile()
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,23 +14,27 @@ function processFile()
             }  
     
             $file_content_json = file_get_contents($tmpFile);
-            
-            $file_content_array = json_decode($file_content_json,true);
 
-            foreach($file_content_array['forms'] as $key => $form)
-            {
-                $result = addForm($_SESSION['username'], $form);
+            $url = "http://localhost/FeE/ImportExport_API/data?username=". $_SESSION['username'];
+    
+            $cURL_handler = curl_init();
 
-                if ($result['status'] == 'YES') {
-                    continue;
-                } else {
-                    return "Error submitting form: " . $result['message'];
-                }
-            }
+            $options = array(
+                CURLOPT_URL => $url,
+                CURLOPT_POST => 1,
+                CURLOPT_POSTFIELDS => $file_content_json,
+                CURLOPT_RETURNTRANSFER => 1
+            );
+
+            curl_setopt_array($cURL_handler, $options);
+
+            $result = curl_exec($cURL_handler);
+
+            curl_close($cURL_handler);
 
             unlink($tmpFile);
 
-            return "OK";
+            return json_decode($result);
         } else {
             return "No file selected.";
         }

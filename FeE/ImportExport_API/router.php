@@ -38,7 +38,7 @@ if(isset($url['query']))
     }
 }
 
-$username = $url_query[1] ?? null;
+$username = $url_query[1];
 
 $service = new service_ie;
 
