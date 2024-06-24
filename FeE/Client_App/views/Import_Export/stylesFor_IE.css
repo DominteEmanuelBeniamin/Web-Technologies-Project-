@@ -1,0 +1,83 @@
+.navbar {
+  overflow: hidden;
+  background-color: #73005C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+body {
+  background-color: #151436;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #CEC5B6;
+  text-align: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  background-color: #151436;
+  color: #CEC5B6;
+}
+
+.mainRec {
+  background-color: #CEC5B6;
+  width: 50%;
+  max-width: 700px;
+  min-height: 150px;
+  margin: auto;
+
+  padding: 10px;
+  position: relative;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  display: flex; 
+  align-items:center; 
+}
+
+.mainRec h1 {
+  text-align: left;
+  color: #73005C;
+  font-size: 24px; 
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-right: 10px;
+}
+
+.mainRec a {
+  background-color: #151436;
+  color: #CEC5B6;
+  padding: 14px 20px;
+  margin: 8px 2px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.sIN, .sUP {
+  background-color: #151436;
+  color: #CEC5B6;
+  
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.container {
+  padding: 16px;
+}
+
+

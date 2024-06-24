@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>View Product</title> 
-<link rel="stylesheet" type="text/css" href="/FeE/Client_App/views/ViewProducts/stylesforviewproducts.css">
+<link rel="stylesheet" type="text/css" href="/FeE/Client_App/views/ViewArchive/stylesforviewarchive.css">
 </head>
 <body>
     
@@ -24,16 +24,21 @@
   </div>
 </div>
 <div class="mainRec">
-  <ul>
+  <h1>Your forms</h1>
+    <ul style="list-style-type:none;">
     <?php foreach($data as $index => $info) { ?>
       <li>
-        <?php echo $info['form_name'] ?>
-        <a href="<?php echo "/FeE/Client_App/views/Statistics/viewStatistics.php?id=".$info['id_form'] ?>">
-          <button type="button" name="show_statistics">Show statistics</button>
-        </a>
+        <div class="product">
+          <?php echo $info['form_name'] ?>
+            <a href="<?php echo "/FeE/Client_App/views/Statistics/viewStatistics.php?id=".$info['id_form'] ?>">
+              <button type="button" name="show_statistics">Show statistics</button>
+          </a>
+        </div>
       </li>
     <?php } ?>
-  </ul>
+    </ul>
+  
+  
 </div>
 
 </body>

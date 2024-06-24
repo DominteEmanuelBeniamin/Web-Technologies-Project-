@@ -33,7 +33,7 @@ foreach ($data as $feedback) {
 
     foreach ($feedback['responses'] as $question => $response) {
         if (!isset($questionResponses[$question])) {
-            $questionResponses[$question] = [];
+            $questionResponses[$question] = ['total' => 0];
         }
         if (is_array($response)) {
             foreach ($response as $resp) {
@@ -41,12 +41,14 @@ foreach ($data as $feedback) {
                     $questionResponses[$question][$resp] = 0;
                 }
                 $questionResponses[$question][$resp]++;
+                $questionResponses[$question]['total']++;
             }
         } else {
             if (!isset($questionResponses[$question][$response])) {
                 $questionResponses[$question][$response] = 0;
             }
             $questionResponses[$question][$response]++;
+            $questionResponses[$question]['total']++;
         }
     }
 }
@@ -91,7 +93,9 @@ foreach ($data as $feedback) {
         <?php if (count($answers) > 1): ?>
             <ul>
                 <?php foreach ($answers as $answer => $count): ?>
-                    <li><?php echo htmlspecialchars($answer); ?>: <?php echo round(($count / $totalResponses) * 100, 2); ?>%</li>
+                    <?php if ($answer !== 'total'): ?>
+                        <li><?php echo htmlspecialchars($answer); ?>: <?php echo round(($count / $questionResponses[$question]['total']) * 100, 2); ?>%</li>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         <?php else: ?>

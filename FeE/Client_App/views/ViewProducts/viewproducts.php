@@ -36,14 +36,18 @@
   </div>
 </div>
 <div class="mainRec">
-  <ul>
+  <h1>Give a feedback</h1>
+  <ul style="list-style-type:none;">
     <?php foreach($data as $index => $info) { ?>
       <li>
-        <a href="<?php echo "/FeE/Client_App/controllers/viewSingleproduct_controller.php?id=".$info['id_form'] ?>">
-          <?php echo $info['form_name'] ?>
-        </a>
+        <div class="product">
+          <a href="<?php echo "/FeE/Client_App/controllers/viewSingleproduct_controller.php?id=".$info['id_form'] ?>">
+            <?php echo $info['form_name'] ?>
+          </a>
+        </div>
       </li>
     <?php } ?>
+    
   </ul>
 </div>
 

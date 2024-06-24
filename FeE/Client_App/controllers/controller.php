@@ -37,15 +37,17 @@ function choose_page($page_name){
             }
             else
             {
-                //require_once "../views/AddProduct/addproduct.php";
                 if(isset($_GET['status']) and $_GET['status']==="success")
-                {
-                    //$status = $_GET['status'];
+                {       
                     require_once "../views/AddProduct/addproduct_success.php";
                 }
                 else
                     require_once "../views/AddProduct/addproduct.php";
             }
+            break;
+
+        case "importexport":
+            require_once "../views/Import_Export/import_export.php";
             break;
 
         case "home":

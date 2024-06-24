@@ -1,95 +1,80 @@
+/* General body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #151436;
+  color: #CEC5B6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styling */
 .navbar {
-  overflow: hidden;
   background-color: #73005C;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-left: 20px;
 }
 
-body {
-  background-color: #151436;
-  margin: 0;
-  padding: 0;
-}
-
+/* Navbar links styling */
 .nav-links a {
   color: #CEC5B6;
   text-align: center;
-  padding: 8px 12px;
+  padding: 10px 15px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
   background-color: #151436;
-  color: #CEC5B6;
+  color: #FFFFFF;
 }
 
-/*.mainRec {
-  background-color: #CEC5B6;
-  width: 50%;
-  max-width: 700px;
-  min-height: 150px;
-  padding: 10px;
-  position: relative;
-  align-items: center;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  white-space: normal;
-}*/
-
+/* Main container styling */
 .mainRec {
   background-color: #CEC5B6;
   width: 80%;
   max-width: 1000px; 
-  height: 300px;
-  margin: 150px auto 0 auto; 
+  min-height: 300px;
+  margin: 50px auto;
   padding: 20px;
-  position: relative;
-}
-
-/*.mainRec h1 {
-  text-align: left;
-  position: absolute;
-  left: 2%;
-  color: #73005C;
-  font-size: 3vw;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  top: 20%;
-  right: 2%;
-  overflow-wrap: break-word;
-} */
-
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.product {
-  background-color: #CEC5B6;
-  border: 1px solid #73005C;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  width: calc(33.333% - 20px);
-  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #151436;
   text-align: center;
 }
 
-.product img {
-  max-width: 100%;
-  height: auto;
+.mainRec h1 {
+  color: #73005C;
+  font-size: 2.5rem;
+  font-family: 'Impact', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.product {
+  background-color: #ECE5DD;
+  border: 1px solid #73005C;
   border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  width: calc(33.333% - 30px);
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .product a {
@@ -98,6 +83,7 @@ body {
   margin-top: 10px;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .product a:hover {
