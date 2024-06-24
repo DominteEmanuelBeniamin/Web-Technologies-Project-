@@ -22,6 +22,12 @@ function choose_page($page_name){
             require_once "../views/ViewProducts/viewproducts.php";
             break;
 
+        case "viewarchive":
+            require_once "../models/viewarchive_model.php";
+            $data = getArchive();
+            require_once "../views/ViewArchive/viewarchive.php";
+            break;
+
         case "addproduct":
             global $login;
             if($login == false)

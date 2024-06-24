@@ -23,12 +23,12 @@ if($uri_3[0] != "forms" && $uri_3[0] != "feedbacks" && $uri_3[0] != "archive")
 if(count($uri_3) > 1)
     $query = explode("=",$uri_3[1]);
     
-$id_user = $query[1] ?? null;
+$username = $query[1] ?? null;
 
 $id = $uri[4] ?? null;
 
 $database = new database();
 
-$controller = new service($database,$id_user);
+$controller = new service($database,$username);
 
 $controller->processRequest($_SERVER['REQUEST_METHOD'],$uri_3[0], $id);

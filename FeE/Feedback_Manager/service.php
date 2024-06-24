@@ -3,12 +3,12 @@
 class service
 {
     private $database;
-    private $id_user;
-    public function __construct(database $database,?string $id_user)
+    private $username;
+    public function __construct(database $database,?string $username)
     {
         $this->database = $database;
-        if(isset($id_user))
-            $this->id_user = $id_user;
+        if(isset($username))
+            $this->username = $username;
     }
     public function processRequest($method,$collection,?string $id): void
     {
@@ -125,7 +125,7 @@ class service
     {
         switch ($method) {
             case "GET":
-                //$id_user = $_GET['id'];
+                //$username = $_GET['id'];
                 echo json_encode($this->getArchive());
                 break;
         }
@@ -149,14 +149,7 @@ class service
 
     private function createResource(array $data): bool
     {
-        /*$feedback="{";
-        foreach($data['feedback'] as $res => $value)
-        {
-            $feedback .="\"". $res . "\":\"". $value."\",";
-        }
-        rtrim($feedback,",");
-        $feedback .="}";
-        */
+
         $sql_stmt = "INSERT INTO `feedbacks` (`id_form`, `id_feedback`, `feedback`) VALUES ('".$data['id_form']."', NULL,'".json_encode($data['feedback'])."')";
 
         $sql_response = $this->database->execute_query($sql_stmt);
@@ -168,7 +161,7 @@ class service
 
     private function getArchive(): array
     {
-        $sql_stmt = "SELECT form_name,id_form FROM `forms` WHERE id_user=".$this->id_user;
+        $sql_stmt = "SELECT form_name,id_form FROM `forms` join accounts on id_user=id where username='".$this->username."'";
 
         $sql_response = $this->database->execute_query($sql_stmt);
 
