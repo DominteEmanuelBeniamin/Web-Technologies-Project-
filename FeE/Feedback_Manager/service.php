@@ -3,9 +3,12 @@
 class service
 {
     private $database;
-    public function __construct(database $database)
+    private $id_user;
+    public function __construct(database $database,?string $id_user)
     {
         $this->database = $database;
+        if(isset($id_user))
+            $this->id_user = $id_user;
     }
     public function processRequest($method,$collection,?string $id): void
     {
@@ -81,6 +84,9 @@ class service
             case "feedbacks":
                 $this->processCR_Feedbacks($method);
                 break;
+            case "archive":
+                $this->processCR_Archive($method);
+                break;
             default:
                 break;
         }
@@ -113,6 +119,16 @@ class service
                 }
         }
 
+    }
+
+    private function processCR_Archive($method): void
+    {
+        switch ($method) {
+            case "GET":
+                //$id_user = $_GET['id'];
+                echo json_encode($this->getArchive());
+                break;
+        }
     }
 
     private function getAll(): array
@@ -148,5 +164,20 @@ class service
             return true;
         else
             return false;
+    }
+
+    private function getArchive(): array
+    {
+        $sql_stmt = "SELECT form_name,id_form FROM `forms` WHERE id_user=".$this->id_user;
+
+        $sql_response = $this->database->execute_query($sql_stmt);
+
+        $data = array();
+
+        while($row = $sql_response->fetch_assoc()) {
+            $data[] = $row;
+        }
+
+        return $data;
     }
 }
