@@ -4,24 +4,51 @@ function addfeedback()
 {
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $emotions = $_POST['emotion'];
+    $responses = $_POST['responses'];
+    $emotion = $_POST['emotion'];
 
     $id_form = $_GET['id'];
     $form = getSingleform($id_form);
 
-    $index = 0;
-    $responses = array();
+    $responses_data = array();
 
+    /* cum arata un form
+    {
+    "name": "test6",
+    "description": "test6",
+    "questions": {
+        "question_1": {
+            "text": "ca va?",
+            "type": "write"
+        },
+        "question_2": {
+            "text": "yes,no",
+            "type": "multiple",
+            "options": [
+                "yes",
+                "no"
+            ]
+        }
+    }
+}
+    */
+
+    /* cum arata un feedback
+    {"age":"18-30","sex":"male",
+    "responses":{"Ca va?":"oui oui",
+    "What emotions did you felt when your team scored?": {options: ["bad", "ok" ] }}
+    "emotion" : $emotion}
+    */
     foreach ($form['questions'] as $key => $question)
     {
-        $responses[$question] = $emotions[$index];
-        $index++;
+        $responses_data[$question['text']] = $responses[$key];
     }
 
     $feedbackData = [
         'age' => $age,
         'sex' => $gender,
-        'responses' => $responses
+        'responses' => $responses_data,
+        'emotion' => $emotion
     ];
 
     $data = [

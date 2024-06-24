@@ -36,4 +36,3 @@ if ($success) {
     echo json_encode(['status' => 'NO', 'message' => 'Database error']);
 }
 ?>
-
